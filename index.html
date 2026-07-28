@@ -520,7 +520,15 @@
     overflow: hidden;
   }
 
-  .cert-block { background: var(--bg-card); padding: 1.5rem; }
+  .cert-block {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.15s;
+  }
+
+  .cert-block:hover { background: var(--bg-hover); }
 
   .cert-org {
     font-size: 0.68rem;
@@ -542,6 +550,15 @@
   .cert-date {
     font-size: 0.72rem;
     color: var(--muted2);
+  }
+
+  .cert-view {
+    font-size: 0.68rem;
+    color: var(--accent);
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   /* ── EDUCATION ───────────────────────────────────────────── */
@@ -706,7 +723,7 @@
     </h1>
     <p class="hero-sub">
       Entry-Level Data Analyst with hands-on experience across Python, SQL, Power BI,
-      and Excel. Turning raw data into clear, actionable insights that drive decisions.
+      and Excel Turning raw data into clear, actionable insights that drive decisions.
     </p>
     <div class="hero-stack">
       <span class="stack-pill">Python</span>
@@ -742,7 +759,7 @@
     </div>
     <div class="hero-card-row">
       <span class="hero-card-label">Certifications</span>
-      <span class="hero-card-value accent">4</span>
+      <span class="hero-card-value accent">8</span>
     </div>
     <div class="hero-card-row">
       <span class="hero-card-label">Status</span>
@@ -768,7 +785,7 @@
       <div class="about-bio">
         <p>
           I'm a data analytics professional with hands-on experience turning raw datasets into
-          clear, actionable insights; from HR equity analysis to predictive modelling and
+          clear, actionable insights, from HR equity analysis to predictive modelling and
           interactive revenue dashboards. I'm transitioning from a mechanical engineering background,
           which means I bring a systems mindset and a rigorous approach to problem-solving into
           every analytics project.
@@ -808,7 +825,7 @@
       </div>
       <div class="about-stat">
         <span class="about-stat-label">Certifications earned</span>
-        <span class="about-stat-value">4</span>
+        <span class="about-stat-value">8</span>
       </div>
       <div class="about-stat">
         <span class="about-stat-label">Tools in stack</span>
@@ -1099,22 +1116,42 @@
     <div class="cert-block">
       <p class="cert-org">Quantium</p>
       <p class="cert-name">Data Analytics Job Simulation</p>
-      <p class="cert-date">July 2026</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1QBS0yK83z_VI7o78f9IpFfnt1a04uFLA/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
     <div class="cert-block">
       <p class="cert-org">Deloitte</p>
       <p class="cert-name">Data Analytics Job Simulation</p>
-      <p class="cert-date">June 2026</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1ylKSpThEkzhS1f9p1eh5l7ukbkXzGn7t/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
     <div class="cert-block">
       <p class="cert-org">TechCrush</p>
       <p class="cert-name">Data Analytics Certificate</p>
-      <p class="cert-date">June 2026</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1xL3lCO9pn6tTjMCtJTRq_VN-qOT76E07/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
     <div class="cert-block">
       <p class="cert-org">Arch Technologies</p>
       <p class="cert-name">Data Science Certificate</p>
-      <p class="cert-date">March 2026</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1coK5G-_7mznDXmtvYmK9Hx9gWPhB54Ag/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
+    </div>
+    <div class="cert-block">
+      <p class="cert-org">Google</p>
+      <p class="cert-name">AI-Powered Performance Ads Certification</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1pgkDfal-MAF_L9vPWMifN6zDPgJjAMEc/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
+    </div>
+    <div class="cert-block">
+      <p class="cert-org">Google</p>
+      <p class="cert-name">AI-Powered Shopping Ads Certification</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1VndYA0Aqy0UhQM8WPb2OCFmYHHlzqvAR/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
+    </div>
+    <div class="cert-block">
+      <p class="cert-org">NIMechE</p>
+      <p class="cert-name">Student Membership Certificate (Nigerian Institution of Mechanical Engineers)</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/1ewsRG6h8TGvbdt2zZdBYiDvkAlP7zqTJ/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
+    </div>
+    <div class="cert-block">
+      <p class="cert-org">SPE</p>
+      <p class="cert-name">Student Membership Certificate (Society of Petroleum Engineers)</p>
+      <p class="cert-date"><a href="https://drive.google.com/file/d/10koZ9nftfPvY-VflE6r9DTEw87P3vZ-B/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
   </div>
 </section>
@@ -1136,7 +1173,7 @@
     </div>
     <div class="edu-block">
       <p class="edu-period">2026</p>
-      <p class="edu-institution">TechCrush Tech for Africa Scholarship</p>
+      <p class="edu-institution">TechCrush (Tech for Africa Scholarship)</p>
       <p class="edu-degree">Data Analytics Program</p>
       <p class="edu-note">Intensive program covering Excel, Python, and Power BI for end-to-end data analysis.</p>
     </div>
@@ -1156,7 +1193,7 @@
       <p class="contact-intro">
         I'm open to full-time roles, internships, collaborations, and freelance projects in
         data analytics, business intelligence, and data science. If you're looking for someone
-        who brings both technical depth and clear communication to the table — reach out.
+        who brings both technical depth and clear communication to the table, reach out!.
       </p>
       <a class="contact-email" href="mailto:boluwatifeadeoye02@gmail.com">
         boluwatifeadeoye02@gmail.com
