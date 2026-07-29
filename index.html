@@ -266,9 +266,45 @@
   /* ── ABOUT ───────────────────────────────────────────────── */
   .about-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 3rem;
+    grid-template-columns: 1fr 300px;
+    gap: 2.5rem;
     align-items: start;
+  }
+
+  .about-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .about-photo img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    filter: grayscale(20%) contrast(1.05);
+    display: block;
+    box-shadow: 0 0 0 6px rgba(59,130,246,0.1);
+  }
+
+  .about-photo-name {
+    margin-top: 1rem;
+    font-family: var(--display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .about-photo-title {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+    text-align: center;
   }
 
   .about-bio { color: var(--muted); line-height: 1.85; }
@@ -307,7 +343,7 @@
   /* ── SKILLS ──────────────────────────────────────────────── */
   .skills-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--bg-line);
     border: 1px solid var(--bg-line);
@@ -696,6 +732,9 @@
     #hero { flex-direction: column; gap: 2rem; }
     .hero-card { width: 100%; }
     .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .about-photo img { width: 120px; height: 120px; }
+    .skills-layout { grid-template-columns: 1fr 1fr; }
+    #value > div:last-child { grid-template-columns: 1fr !important; }
     .skills-layout { grid-template-columns: 1fr; }
     .cert-layout { grid-template-columns: 1fr 1fr; }
     .edu-layout { grid-template-columns: 1fr; }
@@ -723,6 +762,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#work">Projects</a></li>
+    <li><a href="#value">Why Me</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -731,7 +771,10 @@
 <!-- HERO -->
 <div id="hero">
   <div class="hero-content">
-    <div class="hero-badge">Available for opportunities</div>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;">
+      <div class="hero-badge">● Open to Work</div>
+      <div class="hero-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:#10b981;">📚 Learning: SQL Advanced · Tableau</div>
+    </div>
     <h1 class="hero-title">
       Adeoye Boluwatife<br />
       <span class="line2">Emmanuel</span>
@@ -740,6 +783,15 @@
       Entry-Level Data Analyst with hands-on experience across Python, SQL, Power BI,
       and Excel. Turning raw data into clear, actionable insights that drive decisions.
     </p>
+    <div style="margin-bottom:1rem;">
+      <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.5rem;">Open to roles in</p>
+      <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+        <span style="font-size:0.72rem;font-weight:500;background:var(--accent-lt);border:1px solid var(--accent-bdr);color:var(--accent);padding:0.25rem 0.7rem;border-radius:100px;">Data Analyst</span>
+        <span style="font-size:0.72rem;font-weight:500;background:var(--accent-lt);border:1px solid var(--accent-bdr);color:var(--accent);padding:0.25rem 0.7rem;border-radius:100px;">Business Intelligence</span>
+        <span style="font-size:0.72rem;font-weight:500;background:var(--accent-lt);border:1px solid var(--accent-bdr);color:var(--accent);padding:0.25rem 0.7rem;border-radius:100px;">Data Science</span>
+        <span style="font-size:0.72rem;font-weight:500;background:var(--accent-lt);border:1px solid var(--accent-bdr);color:var(--accent);padding:0.25rem 0.7rem;border-radius:100px;">Reporting Analyst</span>
+      </div>
+    </div>
     <div class="hero-stack">
       <span class="stack-pill">Python</span>
       <span class="stack-pill">SQL</span>
@@ -777,6 +829,10 @@
       <span class="hero-card-value accent">8</span>
     </div>
     <div class="hero-card-row">
+      <span class="hero-card-label">Languages</span>
+      <span class="hero-card-value">English · Yoruba</span>
+    </div>
+    <div class="hero-card-row">
       <span class="hero-card-label">Status</span>
       <span class="hero-card-value green">Open to Work</span>
     </div>
@@ -797,6 +853,11 @@
   </div>
   <div class="about-layout reveal">
     <div>
+      <div class="about-photo">
+        <img src="photo.jpg" alt="Adeoye Boluwatife Emmanuel — Data Analyst" />
+        <p class="about-photo-name">Adeoye Boluwatife Emmanuel</p>
+        <p class="about-photo-title">Entry-Level Data Analyst · Lagos, Nigeria</p>
+      </div>
       <div class="about-bio">
         <p>
           I'm a data analytics professional with hands-on experience turning raw datasets into
@@ -824,7 +885,7 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
         <a class="btn-ghost" href="https://linkedin.com/in/bea2002" target="_blank" rel="noopener">LinkedIn Profile</a>
-        <a class="btn-ghost" href="https://drive.google.com/file/d/1B8r3s30XsuELmdG6NDIxr7Wupz-LrZY4/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="btn-ghost" href="REPLACE_WITH_GOOGLE_DRIVE_LINK" target="_blank" rel="noopener">
           📄 Recommendation Letter
         </a>
       </div>
@@ -896,6 +957,7 @@
     <div class="skill-block">
       <p class="skill-block-title">Excel &amp; SQL</p>
       <div class="skill-tags">
+        <span class="skill-tag">Microsoft Excel</span>
         <span class="skill-tag">Pivot Tables</span>
         <span class="skill-tag">Slicers</span>
         <span class="skill-tag">Dashboard Design</span>
@@ -903,6 +965,32 @@
         <span class="skill-tag">VLOOKUP / INDEX-MATCH</span>
         <span class="skill-tag">SQL Queries</span>
         <span class="skill-tag">Data Cleaning</span>
+        <span class="skill-tag">Google Sheets</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <p class="skill-block-title">Office &amp; Productivity Suite</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Microsoft Word</span>
+        <span class="skill-tag">Microsoft PowerPoint</span>
+        <span class="skill-tag">Microsoft Outlook</span>
+        <span class="skill-tag">Google Docs</span>
+        <span class="skill-tag">Google Slides</span>
+        <span class="skill-tag">Google Drive</span>
+        <span class="skill-tag">Fast Typing</span>
+        <span class="skill-tag">Technical Report Writing</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <p class="skill-block-title">Developer Tools</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Jupyter Notebook</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">GitHub Pages</span>
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">JavaScript</span>
       </div>
     </div>
     <div class="skill-block">
@@ -910,12 +998,57 @@
       <div class="skill-tags">
         <span class="skill-tag">Data Cleaning</span>
         <span class="skill-tag">Data Visualisation</span>
-        <span class="skill-tag">Technical Reporting</span>
-        <span class="skill-tag">Market Research</span>
-        <span class="skill-tag">Keyword Analysis</span>
         <span class="skill-tag">Storytelling with Data</span>
         <span class="skill-tag">Automated Pipelines</span>
+        <span class="skill-tag">Market Research</span>
+        <span class="skill-tag">Keyword Analysis</span>
+        <span class="skill-tag">Attention to Detail</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Cross-functional Communication</span>
+        <span class="skill-tag">Presentation Delivery</span>
       </div>
+    </div>
+    <div class="skill-block" style="background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.15);">
+      <p class="skill-block-title" style="color:#10b981;">Currently Learning</p>
+      <div class="skill-tags">
+        <span class="skill-tag" style="border-color:rgba(16,185,129,0.3);color:#10b981;">SQL Advanced</span>
+        <span class="skill-tag" style="border-color:rgba(16,185,129,0.3);color:#10b981;">Tableau</span>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted2);margin-top:0.85rem;line-height:1.5;">Actively deepening expertise in advanced SQL techniques and building proficiency in Tableau for expanded visualisation capabilities.</p>
+    </div>
+    <div class="skill-block">
+      <p class="skill-block-title">Languages</p>
+      <div class="skill-tags">
+        <span class="skill-tag">English — Fluent</span>
+        <span class="skill-tag">Yoruba — Native</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY HIRE ME -->
+<section id="value">
+  <div class="reveal">
+    <p class="section-eyebrow">Why Work With Me</p>
+    <h2 class="section-title">What I bring to your team.</h2>
+  </div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bg-line);border:1px solid var(--bg-line);border-radius:var(--radius);overflow:hidden;">
+    <div style="background:var(--bg-card);padding:2rem;">
+      <div style="width:36px;height:36px;background:var(--accent-lt);border:1px solid var(--accent-bdr);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.1rem;">🎯</div>
+      <p style="font-family:var(--display);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.6rem;letter-spacing:-0.01em;">End-to-End Ownership</p>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.75;">I don't just run analyses — I own the full pipeline. From raw, messy data to a clean dashboard with a clear narrative, I handle every step and communicate findings in plain language.</p>
+    </div>
+    <div style="background:var(--bg-card);padding:2rem;border-left:1px solid var(--bg-line);border-right:1px solid var(--bg-line);">
+      <div style="width:36px;height:36px;background:var(--accent-lt);border:1px solid var(--accent-bdr);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.1rem;">⚙️</div>
+      <p style="font-family:var(--display);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.6rem;letter-spacing:-0.01em;">Engineer's Precision</p>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.75;">My mechanical engineering background means I approach data problems with rigour and a systems mindset — asking the right questions, checking assumptions, and verifying outputs before drawing conclusions.</p>
+    </div>
+    <div style="background:var(--bg-card);padding:2rem;">
+      <div style="width:36px;height:36px;background:var(--accent-lt);border:1px solid var(--accent-bdr);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.1rem;">📈</div>
+      <p style="font-family:var(--display);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.6rem;letter-spacing:-0.01em;">Fast, Continuous Growth</p>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.75;">In under a year I've completed 3 internships, 8 certifications, 6 projects, and built a production-grade AutoML tool from scratch. I learn fast, apply immediately, and keep raising the bar.</p>
     </div>
   </div>
 </section>
@@ -1048,8 +1181,8 @@
           <span class="project-num">01</span>
           <span class="project-badge">Applied ML Tool</span>
         </div>
-        <h3 class="project-title">Ballistic AI (Automated Model Builder)</h3>
-        <p class="project-desc">A browser-based, no-code AutoML tool that takes any CSV through a full end-to-end pipeline: data intake, automated cleaning, model training, and live prediction. All running client-side includes confusion matrices, feature importance charts, and an integrated co-pilot assistant.</p>
+        <h3 class="project-title">Ballistic AI — Automated Model Builder</h3>
+        <p class="project-desc">A browser-based, no-code AutoML tool that takes any CSV through a full end-to-end pipeline: data intake, automated cleaning, model training, and live prediction — all running client-side. Includes confusion matrices, feature importance charts, and an integrated co-pilot assistant.</p>
         <div class="project-tags">
           <span class="p-tag">TensorFlow.js</span><span class="p-tag">JavaScript</span><span class="p-tag">Chart.js</span><span class="p-tag">jsPDF</span><span class="p-tag">AutoML</span>
         </div>
@@ -1100,7 +1233,7 @@
           <span class="project-badge">Excel Analytics</span>
         </div>
         <h3 class="project-title">Melanin HR Analysis &amp; Dashboard</h3>
-        <p class="project-desc">Explored workforce data through an HR equity lens. Built entirely in Excel, importing and cleaning raw HR records, using pivot tables and conditional logic to surface patterns in headcount, department distribution, and demographic breakdowns, delivered via an interactive dashboard.</p>
+        <p class="project-desc">Explored workforce data through an HR equity lens. Built entirely in Excel — importing and cleaning raw HR records, using pivot tables and conditional logic to surface patterns in headcount, department distribution, and demographic breakdowns, delivered via an interactive dashboard.</p>
         <div class="project-tags">
           <span class="p-tag">Excel</span><span class="p-tag">Pivot Tables</span><span class="p-tag">HR Analytics</span><span class="p-tag">Dashboard</span><span class="p-tag">Equity Analysis</span>
         </div>
@@ -1216,7 +1349,7 @@
           <span class="project-badge">Excel Analytics</span>
         </div>
         <h3 class="project-title">Synthetic Movie Ratings Analysis &amp; Dashboard</h3>
-        <p class="project-desc">End-to-end analysis of a global movie ratings dataset across genre, country, age, and subscription type, all built in Excel. Key metrics: $1.34M revenue vs $482K budget, 4.20/5 rating. Interactive dashboard with slicers for genre, country, age, gender, subscription type, and release year.</p>
+        <p class="project-desc">End-to-end analysis of a global movie ratings dataset across genre, country, age, and subscription type — built in Excel. Key metrics: $1.34M revenue vs $482K budget, 4.20/5 rating. Interactive dashboard with slicers for genre, country, age, gender, subscription type, and release year.</p>
         <div class="project-tags">
           <span class="p-tag">Excel</span><span class="p-tag">Pivot Tables</span><span class="p-tag">Slicers</span><span class="p-tag">Dashboard</span><span class="p-tag">Revenue Analysis</span>
         </div>
@@ -1374,12 +1507,12 @@
     </div>
     <div class="cert-block">
       <p class="cert-org">NIMechE</p>
-      <p class="cert-name">Student Membership Certificate (Nigerian Institution of Mechanical Engineers)</p>
+      <p class="cert-name">Student Membership Certificate — Nigerian Institution of Mechanical Engineers</p>
       <p class="cert-date"><a href="https://drive.google.com/file/d/1ewsRG6h8TGvbdt2zZdBYiDvkAlP7zqTJ/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
     <div class="cert-block">
       <p class="cert-org">SPE</p>
-      <p class="cert-name">Student Membership Certificate (Society of Petroleum Engineers)</p>
+      <p class="cert-name">Student Membership Certification — Society of Petroleum Engineers</p>
       <p class="cert-date"><a href="https://drive.google.com/file/d/10koZ9nftfPvY-VflE6r9DTEw87P3vZ-B/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-size:0.7rem;">View Certificate ↗</a></p>
     </div>
   </div>
@@ -1402,7 +1535,7 @@
     </div>
     <div class="edu-block">
       <p class="edu-period">2026</p>
-      <p class="edu-institution">TechCrush (Tech for Africa Scholarship)</p>
+      <p class="edu-institution">TechCrush — Tech for Africa Scholarship</p>
       <p class="edu-degree">Data Analytics Program</p>
       <p class="edu-note">Intensive program covering Excel, Python, and Power BI for end-to-end data analysis.</p>
     </div>
@@ -1422,7 +1555,7 @@
       <p class="contact-intro">
         I'm open to full-time roles, internships, collaborations, and freelance projects in
         data analytics, business intelligence, and data science. If you're looking for someone
-        who brings both technical depth and clear communication to the table, reach out!.
+        who brings both technical depth and clear communication to the table — reach out.
       </p>
       <a class="contact-email" href="mailto:boluwatifeadeoye02@gmail.com">
         boluwatifeadeoye02@gmail.com
@@ -1460,7 +1593,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Adeoye Boluwatife Emmanuel, Data Analyst</p>
+  <p>© 2026 Adeoye Boluwatife Emmanuel — Data Analyst</p>
   <p>Lagos, Nigeria</p>
 </footer>
 
