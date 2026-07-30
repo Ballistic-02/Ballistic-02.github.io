@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Adeoye Boluwatife Emmanuel, Data Analyst</title>
+<title>Adeoye Boluwatife Emmanuel's Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -83,10 +83,53 @@
     letter-spacing: 0.04em;
     padding: 0.4rem 0.9rem;
     border-radius: var(--radius-sm);
-    transition: color 0.15s, background 0.15s;
+    transition: color 0.2s, background 0.2s;
   }
 
   .nav-links a:hover { color: var(--text); background: var(--bg-line); }
+  .nav-links a.active {
+    color: var(--accent);
+    background: var(--accent-lt);
+  }
+
+  /* ── SCROLL TO TOP ───────────────────────────────────────── */
+  #scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 42px;
+    height: 42px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+    z-index: 150;
+    box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+  }
+
+  #scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #scroll-top:hover { background: var(--accent-d); }
+  #scroll-top svg { width: 16px; height: 16px; stroke: #fff; }
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    z-index: 200;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(59,130,246,0.6);
+  }
 
   /* ── HERO ────────────────────────────────────────────────── */
   #hero {
@@ -756,7 +799,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#hero">Boluwatife<span>.</span></a>
+  <a class="nav-logo" href="#hero">Boluwatife's Portfolio<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -773,7 +816,7 @@
   <div class="hero-content">
     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;">
       <div class="hero-badge">● Open to Work</div>
-      <div class="hero-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:#10b981;"> Learning: SQL Advanced · Tableau</div>
+      <div class="hero-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:#10b981;">📚 Learning: SQL Advanced · Tableau</div>
     </div>
     <h1 class="hero-title">
       Adeoye Boluwatife<br />
@@ -781,7 +824,7 @@
     </h1>
     <p class="hero-sub">
       Entry-Level Data Analyst with hands-on experience across Python, SQL, Power BI,
-      and Excel. Turning raw data into clear, actionable insights that drive decisions.
+      and Excel — turning raw data into clear, actionable insights that drive decisions.
     </p>
     <div style="margin-bottom:1rem;">
       <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.5rem;">Open to roles in</p>
@@ -886,7 +929,7 @@
         </a>
         <a class="btn-ghost" href="https://linkedin.com/in/bea2002" target="_blank" rel="noopener">LinkedIn Profile</a>
         <a class="btn-ghost" href="REPLACE_WITH_GOOGLE_DRIVE_LINK" target="_blank" rel="noopener">
-          Recommendation Letter
+          📄 Recommendation Letter
         </a>
       </div>
     </div>
@@ -1535,7 +1578,7 @@
     </div>
     <div class="edu-block">
       <p class="edu-period">2026</p>
-      <p class="edu-institution">TechCrush (Tech for Africa Scholarship)</p>
+      <p class="edu-institution">TechCrush — Tech for Africa Scholarship</p>
       <p class="edu-degree">Data Analytics Program</p>
       <p class="edu-note">Intensive program covering Excel, Python, and Power BI for end-to-end data analysis.</p>
     </div>
@@ -1593,16 +1636,71 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Adeoye Boluwatife Emmanuel, Data Analyst</p>
+  <p>© 2026 Adeoye Boluwatife Emmanuel's Portfolio</p>
   <p>Lagos, Nigeria</p>
 </footer>
 
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 12V4M4 8l4-4 4 4"/>
+  </svg>
+</button>
+
 <script>
+  // ── Scroll reveal ──────────────────────────────────────────
   const obs = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }),
     { threshold: 0.07, rootMargin: '0px 0px -20px 0px' }
   );
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── Progress bar ───────────────────────────────────────────
+  const bar = document.getElementById('progress-bar');
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+
+  // ── Active nav highlight ───────────────────────────────────
+  const sections = document.querySelectorAll('section[id], div[id="hero"]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    let current = 'hero';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // ── Scroll to top button ───────────────────────────────────
+  const scrollTopBtn = document.getElementById('scroll-top');
+
+  window.addEventListener('scroll', () => {
+    updateProgress();
+    updateActiveNav();
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  // Run on load
+  updateProgress();
+  updateActiveNav();
 </script>
 
 </body>
