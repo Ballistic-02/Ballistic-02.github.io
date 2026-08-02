@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Adeoye Boluwatife Emmanuel's Portfolio</title>
+<title>Adeoye Boluwatife Emmanuel, Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --bg:         #0b0e14;
     --bg-card:    #111520;
@@ -31,9 +31,9 @@
     --max:        1080px;
     --pad-x:      clamp(1.25rem, 5vw, 3rem);
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -43,7 +43,7 @@
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
-
+ 
   /* ── NAV ─────────────────────────────────────────────────── */
   nav {
     position: fixed;
@@ -58,7 +58,7 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--bg-line);
   }
-
+ 
   .nav-logo {
     font-family: var(--display);
     font-size: 1rem;
@@ -67,15 +67,15 @@
     text-decoration: none;
     letter-spacing: -0.01em;
   }
-
+ 
   .nav-logo span { color: var(--accent); }
-
+ 
   .nav-links {
     display: flex;
     gap: 0;
     list-style: none;
   }
-
+ 
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
@@ -85,14 +85,93 @@
     border-radius: var(--radius-sm);
     transition: color 0.2s, background 0.2s;
   }
-
+ 
   .nav-links a:hover { color: var(--text); background: var(--bg-line); }
   .nav-links a.active {
     color: var(--accent);
     background: var(--accent-lt);
   }
-
-  /* ── SCROLL TO TOP ───────────────────────────────────────── */
+ 
+  /* ── HERO CANVAS BACKGROUND ──────────────────────────────── */
+  #hero { position: relative; overflow: hidden; }
+  #hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-content, .hero-card { position: relative; z-index: 1; }
+ 
+  /* ── SKILL BARS ──────────────────────────────────────────── */
+  .skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+ 
+  .skill-bar-item { display: flex; flex-direction: column; gap: 0.35rem; }
+ 
+  .skill-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .skill-bar-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+ 
+  .skill-bar-pct {
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+ 
+  .skill-bar-track {
+    height: 4px;
+    background: var(--bg-line);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+ 
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    border-radius: 100px;
+    width: 0%;
+    transition: width 1.2s ease;
+  }
+ 
+  /* ── DIRECTIONAL ANIMATIONS ──────────────────────────────── */
+  .anim-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+ 
+  .anim-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+ 
+  .anim-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+ 
+  .anim-left.visible, .anim-right.visible, .anim-up.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
   #scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -112,12 +191,12 @@
     z-index: 150;
     box-shadow: 0 4px 14px rgba(59,130,246,0.4);
   }
-
+ 
   #scroll-top.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   #scroll-top:hover { background: var(--accent-d); }
   #scroll-top svg { width: 16px; height: 16px; stroke: #fff; }
   #progress-bar {
@@ -130,7 +209,7 @@
     transition: width 0.1s linear;
     box-shadow: 0 0 8px rgba(59,130,246,0.6);
   }
-
+ 
   /* ── HERO ────────────────────────────────────────────────── */
   #hero {
     min-height: 100svh;
@@ -141,9 +220,9 @@
     margin: 0 auto;
     gap: 4rem;
   }
-
+ 
   .hero-content { flex: 1; }
-
+ 
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -159,7 +238,7 @@
     border-radius: 100px;
     margin-bottom: 1.75rem;
   }
-
+ 
   .hero-badge::before {
     content: '';
     width: 6px; height: 6px;
@@ -167,7 +246,7 @@
     background: var(--green);
     box-shadow: 0 0 0 2px rgba(16,185,129,0.25);
   }
-
+ 
   .hero-title {
     font-family: var(--display);
     font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -177,12 +256,12 @@
     margin-bottom: 1.5rem;
     letter-spacing: -0.025em;
   }
-
+ 
   .hero-title .line2 {
     color: var(--accent);
     display: block;
   }
-
+ 
   .hero-sub {
     font-size: 1rem;
     color: var(--muted);
@@ -190,14 +269,14 @@
     line-height: 1.8;
     margin-bottom: 2rem;
   }
-
+ 
   .hero-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 2.25rem;
   }
-
+ 
   .stack-pill {
     font-size: 0.72rem;
     font-weight: 500;
@@ -208,9 +287,9 @@
     border-radius: 100px;
     letter-spacing: 0.02em;
   }
-
+ 
   .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
+ 
   .btn-primary {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.7rem 1.5rem;
@@ -223,9 +302,9 @@
     transition: background 0.2s;
     letter-spacing: 0.02em;
   }
-
+ 
   .btn-primary:hover { background: var(--accent-d); }
-
+ 
   .btn-ghost {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.7rem 1.5rem;
@@ -237,11 +316,11 @@
     transition: border-color 0.2s, color 0.2s;
     letter-spacing: 0.02em;
   }
-
+ 
   .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
   .btn-primary svg, .btn-ghost svg { width: 13px; height: 13px; }
-
+ 
   /* Hero sidebar card */
   .hero-card {
     width: 280px;
@@ -251,7 +330,7 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .hero-card-header {
     background: var(--accent-lt);
     border-bottom: 1px solid var(--accent-bdr);
@@ -262,7 +341,7 @@
     text-transform: uppercase;
     color: var(--accent);
   }
-
+ 
   .hero-card-row {
     display: flex;
     justify-content: space-between;
@@ -271,19 +350,19 @@
     border-bottom: 1px solid var(--bg-line);
     font-size: 0.8rem;
   }
-
+ 
   .hero-card-row:last-child { border-bottom: none; }
   .hero-card-label { color: var(--muted); }
   .hero-card-value { color: var(--text); font-weight: 500; }
   .hero-card-value.green { color: var(--green); }
   .hero-card-value.accent { color: var(--accent); }
-
+ 
   /* ── DIVIDER ─────────────────────────────────────────────── */
   .divider { width: 100%; height: 1px; background: var(--bg-line); max-width: var(--max); margin: 0 auto; }
-
+ 
   /* ── SECTIONS ────────────────────────────────────────────── */
   section { padding: 5rem var(--pad-x); max-width: var(--max); margin: 0 auto; }
-
+ 
   .section-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -295,7 +374,7 @@
     color: var(--accent);
     margin-bottom: 0.6rem;
   }
-
+ 
   .section-title {
     font-family: var(--display);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -305,7 +384,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 2.5rem;
   }
-
+ 
   /* ── ABOUT ───────────────────────────────────────────────── */
   .about-layout {
     display: grid;
@@ -313,14 +392,14 @@
     gap: 2.5rem;
     align-items: start;
   }
-
+ 
   .about-photo {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
   }
-
+ 
   .about-photo img {
     width: 160px;
     height: 160px;
@@ -332,7 +411,7 @@
     display: block;
     box-shadow: 0 0 0 6px rgba(59,130,246,0.1);
   }
-
+ 
   .about-photo-name {
     margin-top: 1rem;
     font-family: var(--display);
@@ -342,19 +421,19 @@
     letter-spacing: -0.01em;
     text-align: center;
   }
-
+ 
   .about-photo-title {
     font-size: 0.75rem;
     color: var(--muted);
     margin-top: 0.25rem;
     text-align: center;
   }
-
+ 
   .about-bio { color: var(--muted); line-height: 1.85; }
   .about-bio p + p { margin-top: 1rem; }
-
+ 
   .about-actions { display: flex; gap: 0.75rem; margin-top: 1.75rem; flex-wrap: wrap; }
-
+ 
   .about-panel {
     display: flex;
     flex-direction: column;
@@ -364,7 +443,7 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .about-stat {
     background: var(--bg-card);
     padding: 1.25rem;
@@ -372,9 +451,9 @@
     align-items: center;
     justify-content: space-between;
   }
-
+ 
   .about-stat-label { font-size: 0.78rem; color: var(--muted); }
-
+ 
   .about-stat-value {
     font-family: var(--display);
     font-size: 1.5rem;
@@ -382,7 +461,7 @@
     color: var(--accent);
     line-height: 1;
   }
-
+ 
   /* ── SKILLS ──────────────────────────────────────────────── */
   .skills-layout {
     display: grid;
@@ -393,9 +472,9 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .skill-block { background: var(--bg-card); padding: 1.75rem; }
-
+ 
   .skill-block-title {
     font-size: 0.7rem;
     font-weight: 600;
@@ -406,9 +485,9 @@
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--bg-line);
   }
-
+ 
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
+ 
   .skill-tag {
     font-size: 0.75rem;
     font-weight: 400;
@@ -417,14 +496,14 @@
     padding: 0.28rem 0.7rem;
     border-radius: var(--radius-sm);
   }
-
+ 
   /* ── EXPERIENCE ──────────────────────────────────────────── */
   .exp-table {
     border: 1px solid var(--bg-line);
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .exp-row {
     display: grid;
     grid-template-columns: 180px 1fr;
@@ -432,15 +511,15 @@
     border-bottom: 1px solid var(--bg-line);
     transition: background 0.15s;
   }
-
+ 
   .exp-row:last-child { border-bottom: none; }
   .exp-row:hover { background: var(--bg-hover); }
-
+ 
   .exp-left {
     padding: 1.75rem 1.5rem;
     border-right: 1px solid var(--bg-line);
   }
-
+ 
   .exp-period {
     font-size: 0.7rem;
     font-weight: 600;
@@ -449,11 +528,11 @@
     color: var(--accent);
     margin-bottom: 0.3rem;
   }
-
+ 
   .exp-company { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
-
+ 
   .exp-right { padding: 1.75rem 2rem; }
-
+ 
   .exp-role {
     font-family: var(--display);
     font-size: 1.05rem;
@@ -462,9 +541,9 @@
     margin-bottom: 0.85rem;
     letter-spacing: -0.01em;
   }
-
+ 
   .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-
+ 
   .exp-points li {
     font-size: 0.85rem;
     color: var(--muted);
@@ -472,7 +551,7 @@
     display: flex;
     gap: 0.6rem;
   }
-
+ 
   .exp-points li::before {
     content: '›';
     color: var(--accent);
@@ -480,7 +559,7 @@
     line-height: 1.5;
     flex-shrink: 0;
   }
-
+ 
   /* ── PROJECTS ────────────────────────────────────────────── */
   .project-grid {
     display: flex;
@@ -489,7 +568,7 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .project-row {
     display: grid;
     grid-template-columns: 240px 1fr 140px;
@@ -497,10 +576,10 @@
     border-bottom: 1px solid var(--bg-line);
     transition: background 0.15s;
   }
-
+ 
   .project-row:last-child { border-bottom: none; }
   .project-row:hover { background: var(--bg-hover); }
-
+ 
   .project-preview {
     border-right: 1px solid var(--bg-line);
     overflow: hidden;
@@ -510,11 +589,11 @@
     background: var(--bg-soft);
     min-height: 180px;
   }
-
+ 
   .project-preview svg { width: 100%; height: 100%; display: block; }
-
+ 
   .project-main { padding: 1.75rem 2rem; }
-
+ 
   .project-header {
     display: flex;
     align-items: center;
@@ -523,7 +602,7 @@
   }
     margin-bottom: 0.85rem;
   }
-
+ 
   .project-num {
     font-size: 0.68rem;
     font-weight: 600;
@@ -531,7 +610,7 @@
     color: var(--muted2);
     text-transform: uppercase;
   }
-
+ 
   .project-badge {
     font-size: 0.65rem;
     font-weight: 600;
@@ -543,7 +622,7 @@
     padding: 0.2rem 0.6rem;
     border-radius: 100px;
   }
-
+ 
   .project-title {
     font-family: var(--display);
     font-size: 1.1rem;
@@ -553,7 +632,7 @@
     margin-bottom: 0.75rem;
     line-height: 1.25;
   }
-
+ 
   .project-desc {
     font-size: 0.85rem;
     color: var(--muted);
@@ -561,9 +640,9 @@
     max-width: 580px;
     margin-bottom: 1.1rem;
   }
-
+ 
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-
+ 
   .p-tag {
     font-size: 0.68rem;
     font-weight: 500;
@@ -574,7 +653,7 @@
     border-radius: var(--radius-sm);
     text-transform: uppercase;
   }
-
+ 
   .project-side {
     padding: 2rem 1.5rem;
     border-left: 1px solid var(--bg-line);
@@ -583,7 +662,7 @@
     align-items: flex-start;
     gap: 0.6rem;
   }
-
+ 
   .btn-link {
     display: inline-flex;
     align-items: center;
@@ -598,10 +677,10 @@
     transition: border-color 0.15s, color 0.15s;
     white-space: nowrap;
   }
-
+ 
   .btn-link:hover { border-color: var(--accent); color: var(--accent); }
   .btn-link svg { width: 11px; height: 11px; }
-
+ 
   /* ── CERTIFICATIONS ──────────────────────────────────────── */
   .cert-layout {
     display: grid;
@@ -612,7 +691,7 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .cert-block {
     background: var(--bg-card);
     padding: 1.5rem;
@@ -620,9 +699,9 @@
     display: block;
     transition: background 0.15s;
   }
-
+ 
   .cert-block:hover { background: var(--bg-hover); }
-
+ 
   .cert-org {
     font-size: 0.68rem;
     font-weight: 600;
@@ -631,7 +710,7 @@
     color: var(--accent);
     margin-bottom: 0.6rem;
   }
-
+ 
   .cert-name {
     font-size: 0.9rem;
     font-weight: 500;
@@ -639,12 +718,12 @@
     line-height: 1.35;
     margin-bottom: 0.6rem;
   }
-
+ 
   .cert-date {
     font-size: 0.72rem;
     color: var(--muted2);
   }
-
+ 
   .cert-view {
     font-size: 0.68rem;
     color: var(--accent);
@@ -653,7 +732,7 @@
     align-items: center;
     gap: 0.3rem;
   }
-
+ 
   /* ── EDUCATION ───────────────────────────────────────────── */
   .edu-layout {
     display: grid;
@@ -664,9 +743,9 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .edu-block { background: var(--bg-card); padding: 2rem; }
-
+ 
   .edu-period {
     font-size: 0.68rem;
     font-weight: 600;
@@ -675,13 +754,13 @@
     color: var(--accent);
     margin-bottom: 0.4rem;
   }
-
+ 
   .edu-institution {
     font-size: 0.82rem;
     color: var(--muted);
     margin-bottom: 0.75rem;
   }
-
+ 
   .edu-degree {
     font-family: var(--display);
     font-size: 1.05rem;
@@ -691,9 +770,9 @@
     margin-bottom: 0.5rem;
     letter-spacing: -0.01em;
   }
-
+ 
   .edu-note { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-
+ 
   /* ── CONTACT ─────────────────────────────────────────────── */
   .contact-layout {
     display: grid;
@@ -701,9 +780,9 @@
     gap: 3rem;
     align-items: start;
   }
-
+ 
   .contact-intro { color: var(--muted); line-height: 1.85; margin-bottom: 1.5rem; }
-
+ 
   .contact-email {
     font-family: var(--display);
     font-size: 1.15rem;
@@ -716,16 +795,16 @@
     padding-bottom: 2px;
     transition: border-color 0.2s;
   }
-
+ 
   .contact-email:hover { border-color: var(--accent); }
-
+ 
   .contact-panel {
     background: var(--bg-card);
     border: 1px solid var(--bg-line);
     border-radius: var(--radius);
     overflow: hidden;
   }
-
+ 
   .contact-panel-header {
     background: var(--bg-line);
     padding: 0.85rem 1.25rem;
@@ -735,7 +814,7 @@
     text-transform: uppercase;
     color: var(--muted);
   }
-
+ 
   .contact-row {
     display: flex;
     justify-content: space-between;
@@ -744,14 +823,14 @@
     border-bottom: 1px solid var(--bg-line);
     gap: 1rem;
   }
-
+ 
   .contact-row:last-child { border-bottom: none; }
   .c-label { font-size: 0.72rem; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.06em; }
   .c-value { font-size: 0.82rem; color: var(--text); }
   .c-value a { color: inherit; text-decoration: none; transition: color 0.15s; }
   .c-value a:hover { color: var(--accent); }
   .c-value.avail { color: var(--green); font-weight: 500; }
-
+ 
   /* ── FOOTER ──────────────────────────────────────────────── */
   footer {
     border-top: 1px solid var(--bg-line);
@@ -762,13 +841,13 @@
     align-items: center;
     justify-content: space-between;
   }
-
+ 
   footer p { font-size: 0.75rem; color: var(--muted2); }
-
+ 
   /* ── REVEAL ──────────────────────────────────────────────── */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
+ 
   /* ── RESPONSIVE ──────────────────────────────────────────── */
   @media (max-width: 900px) {
     .nav-links { display: none; }
@@ -787,7 +866,7 @@
     .project-side { border-left: none; border-top: 1px solid var(--bg-line); flex-direction: row; padding: 1.25rem 2rem; flex-wrap: wrap; }
     footer { flex-direction: column; gap: 0.3rem; text-align: center; }
   }
-
+ 
   @media (max-width: 520px) {
     .cert-layout { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; }
@@ -796,10 +875,10 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#hero">Boluwatife's Portfolio<span>.</span></a>
+  <a class="nav-logo" href="#hero">Boluwatife<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -810,9 +889,10 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <div id="hero">
+  <canvas id="hero-canvas"></canvas>
   <div class="hero-content">
     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;">
       <div class="hero-badge">● Open to Work</div>
@@ -861,7 +941,7 @@
     </div>
     <div class="hero-card-row">
       <span class="hero-card-label">Projects</span>
-      <span class="hero-card-value accent">6 Completed</span>
+      <span class="hero-card-value accent">7 Completed</span>
     </div>
     <div class="hero-card-row">
       <span class="hero-card-label">Internships</span>
@@ -885,9 +965,9 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="reveal">
@@ -903,23 +983,46 @@
       </div>
       <div class="about-bio">
         <p>
-          I'm a data analytics professional with hands-on experience turning raw datasets into
-          clear, actionable insights, from HR equity analysis to predictive modelling and
-          interactive revenue dashboards. I'm transitioning from a mechanical engineering background,
-          which means I bring a systems mindset and a rigorous approach to problem-solving into
-          every analytics project.
+          I'm Adeoye Boluwatife Emmanuel, a data analytics professional based in Lagos, Nigeria,
+          currently pursuing a <strong style="color:var(--text);">B.Tech. in Mechanical Engineering</strong>
+          at Ladoke Akintola University of Technology (LAUTECH). My engineering background has given
+          me something most analysts don't start with: a systems mindset, rigorous attention to detail,
+          and a disciplined approach to solving complex problems from first principles.
         </p>
         <p>
-          My work sits at the intersection of curiosity and structure. Whether I'm building a
-          classification model in Python, engineering a Power Query ETL pipeline, or designing
-          an Excel dashboard with dynamic slicers, I care about the full journey and not just the
-          final chart. Good analysis, in my view, isn't just technically sound; it's clear enough
-          that anyone in the room can follow it.
+          I made a deliberate pivot into data analytics through the
+          <strong style="color:var(--text);">TechCrush Tech for Africa Scholarship Program</strong>,
+          an intensive training covering Excel, Python, and Power BI end to end. Since completing that
+          program, I've built active, hands-on experience across three internships at Lagos Data School, TechCrush,
+          and Arch Technologies, working on real client data, not just practice datasets.
         </p>
         <p>
-          I recently completed an intensive data analytics scholarship program and have since applied
-          my skills across three internships, working with real client data on customer segmentation,
-          automated reporting pipelines, and predictive modelling.
+          That experience spans customer segmentation with RFM and KMeans clustering, stock price
+          forecasting with Linear Regression (R² of 0.9998), survival prediction with Logistic
+          Regression (80.4% accuracy), and automated data cleaning pipelines that reduced manual
+          reporting time significantly.
+        </p>
+        <p>
+          Beyond data analytics, I work as an <strong style="color:var(--text);">SEO Content Specialist
+          at Lagos Data School</strong>, producing high-volume, Yoast-compliant articles across
+          topics including predictive analytics, RPA, AI, cloud engineering, cybersecurity, and
+          project management certifications, all localised to the Nigerian market. This role has
+          sharpened my ability to translate complex technical concepts into clear, accessible
+          content that ranks and reaches the right audience.
+        </p>
+        <p>
+          I also serve as a certified <strong style="color:var(--text);">Business Partner at
+          Flowmingo AI</strong> in a freelance capacity, and have contributed to facility
+          management at Lagos Data School and inventory and safety operations in a mechanical
+          engineering workshop environment, demonstrating that I'm comfortable owning
+          responsibilities well beyond a job description.
+        </p>
+        <p>
+          I've earned <strong style="color:var(--text);">8 certifications</strong> including
+          job simulations from Quantium and Deloitte, and hold student memberships with NIMechE
+          and SPE. I'm Google-certified in AI-Powered Ads, actively learning advanced SQL and
+          Tableau, and I volunteered as a Media Volunteer with the Hult Prize Foundation in 2026.
+          I speak English fluently and Yoruba natively.
         </p>
       </div>
       <div class="about-actions">
@@ -935,8 +1038,12 @@
     </div>
     <div class="about-panel">
       <div class="about-stat">
+        <span class="about-stat-label">Active Since</span>
+        <span class="about-stat-value" style="font-size:1.2rem;font-family:var(--sans);font-weight:700;">2025</span>
+      </div>
+      <div class="about-stat">
         <span class="about-stat-label">Projects delivered</span>
-        <span class="about-stat-value">6+</span>
+        <span class="about-stat-value">7+</span>
       </div>
       <div class="about-stat">
         <span class="about-stat-label">Internships completed</span>
@@ -947,19 +1054,19 @@
         <span class="about-stat-value">8</span>
       </div>
       <div class="about-stat">
-        <span class="about-stat-label">Tools in stack</span>
-        <span class="about-stat-value">8+</span>
+        <span class="about-stat-label">Academic background</span>
+        <span class="about-stat-value" style="font-size:0.78rem;font-family:var(--sans);font-weight:600;text-align:right;line-height:1.3;">B.Tech. Mech.<br/>Engineering</span>
       </div>
       <div class="about-stat">
         <span class="about-stat-label">Based in</span>
-        <span class="about-stat-value" style="font-size:1rem;font-family:var(--sans);font-weight:600;">Lagos</span>
+        <span class="about-stat-value" style="font-size:1rem;font-family:var(--sans);font-weight:600;">Lagos, NG</span>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="reveal">
@@ -1067,11 +1174,36 @@
       </div>
     </div>
   </div>
+ 
+  <!-- Skill proficiency bars -->
+  <div class="skill-bars reveal" id="skill-bars-section" style="max-width:680px;margin-top:3rem;">
+    <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;">Tool Proficiency</p>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">Microsoft Excel</span><span class="skill-bar-pct">90%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%"></div></div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">Power BI & DAX</span><span class="skill-bar-pct">82%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82%"></div></div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">Python (Pandas, Scikit-learn)</span><span class="skill-bar-pct">78%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78%"></div></div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">SQL</span><span class="skill-bar-pct">70%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70%"></div></div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">Data Visualisation & Dashboards</span><span class="skill-bar-pct">88%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88%"></div></div>
+    </div>
+    <div class="skill-bar-item">
+      <div class="skill-bar-header"><span class="skill-bar-name">Machine Learning</span><span class="skill-bar-pct">65%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65%"></div></div>
+    </div>
+  </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- WHY HIRE ME -->
 <section id="value">
   <div class="reveal">
     <p class="section-eyebrow">Why Work With Me</p>
@@ -1095,9 +1227,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="reveal">
@@ -1105,7 +1237,7 @@
     <h2 class="section-title">Professional History</h2>
   </div>
   <div class="exp-table reveal">
-
+ 
     <div class="exp-row">
       <div class="exp-left">
         <p class="exp-period">Mar 2026 – Present</p>
@@ -1120,7 +1252,7 @@
         </ul>
       </div>
     </div>
-
+ 
     <div class="exp-row">
       <div class="exp-left">
         <p class="exp-period">2026 – Present</p>
@@ -1135,7 +1267,7 @@
         </ul>
       </div>
     </div>
-
+ 
     <div class="exp-row">
       <div class="exp-left">
         <p class="exp-period">Mar 2026 – Present</p>
@@ -1148,7 +1280,7 @@
         </ul>
       </div>
     </div>
-
+ 
     <div class="exp-row">
       <div class="exp-left">
         <p class="exp-period">Feb – Mar 2026</p>
@@ -1163,7 +1295,7 @@
         </ul>
       </div>
     </div>
-
+ 
     <div class="exp-row">
       <div class="exp-left">
         <p class="exp-period">Dec 2025 – Present</p>
@@ -1176,12 +1308,12 @@
         </ul>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- PROJECTS -->
 <section id="work">
   <div class="reveal">
@@ -1189,7 +1321,7 @@
     <h2 class="section-title">Featured Projects</h2>
   </div>
   <div class="project-grid reveal">
-
+ 
     <!-- Project 01: Ballistic AI -->
     <div class="project-row">
       <div class="project-preview">
@@ -1225,7 +1357,7 @@
           <span class="project-badge">Applied ML Tool</span>
         </div>
         <h3 class="project-title">Ballistic AI (Automated Model Builder)</h3>
-        <p class="project-desc">A browser-based, no-code AutoML tool that takes any CSV through a full end-to-end pipeline: data intake, automated cleaning, model training, and live prediction, all running client-side. Includes confusion matrices, feature importance charts, and an integrated co-pilot assistant.</p>
+        <p class="project-desc">A browser-based, no-code AutoML tool that takes any CSV through a full end-to-end pipeline: data intake, automated cleaning, model training, and live predictions, all running client-side. Includes confusion matrices, feature importance charts, and an integrated co-pilot assistant.</p>
         <div class="project-tags">
           <span class="p-tag">TensorFlow.js</span><span class="p-tag">JavaScript</span><span class="p-tag">Chart.js</span><span class="p-tag">jsPDF</span><span class="p-tag">AutoML</span>
         </div>
@@ -1234,7 +1366,7 @@
         <a class="btn-link" href="https://ballistic-02.github.io/Ballistic.ai" target="_blank" rel="noopener">Live Tool <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
     <!-- Project 02: Melanin HR -->
     <div class="project-row">
       <div class="project-preview">
@@ -1246,24 +1378,24 @@
           <text x="16" y="52" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Engineering</text>
           <rect x="80" y="42" width="100" height="11" fill="#3b82f6" rx="2"/>
           <text x="184" y="52" fill="#3b82f6" font-size="6.5" font-family="Inter,sans-serif">47%</text>
-
+ 
           <text x="16" y="72" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Marketing</text>
           <rect x="80" y="62" width="68" height="11" fill="#3b82f640" rx="2"/>
           <text x="152" y="72" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">32%</text>
-
+ 
           <text x="16" y="92" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Operations</text>
           <rect x="80" y="82" width="45" height="11" fill="#3b82f620" rx="2"/>
           <text x="129" y="92" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">21%</text>
-
+ 
           <!-- divider -->
           <line x1="16" y1="108" x2="224" y2="108" stroke="#1e2333" stroke-width="1"/>
-
+ 
           <!-- Donut chart - gender split -->
           <text x="16" y="124" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Gender Distribution</text>
           <circle cx="60" cy="150" r="22" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="83 53" stroke-dashoffset="0"/>
           <circle cx="60" cy="150" r="22" fill="none" stroke="#1e2333" stroke-width="8" stroke-dasharray="53 83" stroke-dashoffset="-83"/>
           <text x="60" y="154" text-anchor="middle" fill="#e2e8f0" font-size="8" font-weight="600" font-family="Inter,sans-serif">61%</text>
-
+ 
           <rect x="96" y="139" width="8" height="8" fill="#3b82f6" rx="1"/>
           <text x="108" y="147" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Female</text>
           <rect x="96" y="153" width="8" height="8" fill="#1e2333" stroke="#3d4d63" stroke-width="1" rx="1"/>
@@ -1285,45 +1417,45 @@
         <a class="btn-link" href="https://1drv.ms/x/c/bedcaf583f7627fe/IQD0qVDSDs9xRaiklJeEwz0VAR7xBk10Z-yB5RNZzi8uqDI?e=navuHi" target="_blank" rel="noopener">View File <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
     <!-- Project 03: Titanic -->
     <div class="project-row">
       <div class="project-preview">
         <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
           <rect width="240" height="180" fill="#0e1219"/>
           <text x="16" y="28" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Survival Rate by Gender</text>
-
+ 
           <!-- Female bar -->
           <text x="16" y="56" fill="#7e8fa8" font-size="7" font-family="Inter,sans-serif">Female</text>
           <rect x="70" y="44" width="130" height="16" fill="#1e2333" rx="2"/>
           <rect x="70" y="44" width="96" height="16" fill="#10b981" rx="2"/>
           <text x="172" y="56" fill="#10b981" font-size="7" font-weight="600" font-family="Inter,sans-serif">74%</text>
-
+ 
           <!-- Male bar -->
           <text x="16" y="84" fill="#7e8fa8" font-size="7" font-family="Inter,sans-serif">Male</text>
           <rect x="70" y="72" width="130" height="16" fill="#1e2333" rx="2"/>
           <rect x="70" y="72" width="25" height="16" fill="#3b82f6" rx="2"/>
           <text x="100" y="84" fill="#3b82f6" font-size="7" font-weight="600" font-family="Inter,sans-serif">19%</text>
-
+ 
           <line x1="16" y1="102" x2="224" y2="102" stroke="#1e2333" stroke-width="1"/>
           <text x="16" y="116" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Survival by Class</text>
-
+ 
           <!-- Class bars -->
           <text x="16" y="136" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">1st Class</text>
           <rect x="70" y="126" width="130" height="11" fill="#1e2333" rx="2"/>
           <rect x="70" y="126" width="82" height="11" fill="#3b82f6" rx="2"/>
           <text x="156" y="136" fill="#3b82f6" font-size="6.5" font-family="Inter,sans-serif">63%</text>
-
+ 
           <text x="16" y="154" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">2nd Class</text>
           <rect x="70" y="144" width="130" height="11" fill="#1e2333" rx="2"/>
           <rect x="70" y="144" width="61" height="11" fill="#3b82f640" rx="2"/>
           <text x="135" y="154" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">47%</text>
-
+ 
           <text x="16" y="172" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">3rd Class</text>
           <rect x="70" y="162" width="130" height="11" fill="#1e2333" rx="2"/>
           <rect x="70" y="162" width="31" height="11" fill="#3b82f620" rx="2"/>
           <text x="105" y="172" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">24%</text>
-
+ 
           <!-- accuracy badge -->
           <rect x="172" y="108" width="54" height="22" fill="#10b98120" stroke="#10b981" stroke-width="1" rx="3"/>
           <text x="199" y="118" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Accuracy</text>
@@ -1345,7 +1477,7 @@
         <a class="btn-link" href="https://github.com/Ballistic-02/Titanic-Survival-Rate-Prediction" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
     <!-- Project 04: Movie Ratings Excel -->
     <div class="project-row">
       <div class="project-preview">
@@ -1355,15 +1487,15 @@
           <rect x="12" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
           <text x="44" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Revenue</text>
           <text x="44" y="42" text-anchor="middle" fill="#10b981" font-size="9" font-weight="700" font-family="Inter,sans-serif">$1.34M</text>
-
+ 
           <rect x="88" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
           <text x="120" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Avg Rating</text>
           <text x="120" y="42" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">4.20/5</text>
-
+ 
           <rect x="164" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
           <text x="196" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Watch Time</text>
           <text x="196" y="42" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">99.5m</text>
-
+ 
           <!-- ROI by genre bar chart -->
           <text x="12" y="68" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">ROI by Genre</text>
           <rect x="12" y="140" width="18" height="28" fill="#3b82f620" rx="1"/>
@@ -1401,7 +1533,7 @@
         <a class="btn-link" href="https://1drv.ms/x/c/bedcaf583f7627fe/IQDiVj66CPe6TY1X52Ken1PMASEPQtsx2TxxFIgAV5HB5YA?e=gcTwSD" target="_blank" rel="noopener">View File <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
     <!-- Project 05: Movie Ratings Power BI -->
     <div class="project-row">
       <div class="project-preview">
@@ -1413,25 +1545,25 @@
           <rect x="12" y="28" width="100" height="40" fill="#1e2333" rx="3" stroke="#3b82f620" stroke-width="1"/>
           <text x="22" y="42" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Top ROI Genre</text>
           <text x="22" y="58" fill="#3b82f6" font-size="11" font-weight="700" font-family="Inter,sans-serif">Drama</text>
-
+ 
           <rect x="124" y="28" width="104" height="40" fill="#1e2333" rx="3" stroke="#10b98120" stroke-width="1"/>
           <text x="134" y="42" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Top Revenue Market</text>
           <text x="134" y="58" fill="#10b981" font-size="11" font-weight="700" font-family="Inter,sans-serif">France</text>
-
+ 
           <!-- Subscription donut -->
           <text x="12" y="86" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Watch Time by Subscription</text>
           <circle cx="50" cy="130" r="28" fill="none" stroke="#3b82f6" stroke-width="9" stroke-dasharray="59 118"/>
           <circle cx="50" cy="130" r="28" fill="none" stroke="#3b82f640" stroke-width="9" stroke-dasharray="39 118" stroke-dashoffset="-59"/>
           <circle cx="50" cy="130" r="28" fill="none" stroke="#1e2333" stroke-width="9" stroke-dasharray="20 118" stroke-dashoffset="-98"/>
           <text x="50" y="134" text-anchor="middle" fill="#e2e8f0" font-size="7" font-weight="700" font-family="Inter,sans-serif">STD</text>
-
+ 
           <rect x="96" y="98" width="8" height="8" fill="#3b82f6" rx="1"/>
           <text x="108" y="106" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Standard 50%</text>
           <rect x="96" y="112" width="8" height="8" fill="#3b82f640" rx="1"/>
           <text x="108" y="120" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Premium 33%</text>
           <rect x="96" y="126" width="8" height="8" fill="#1e2333" stroke="#3d4d63" stroke-width="1" rx="1"/>
           <text x="108" y="134" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Free 17%</text>
-
+ 
           <!-- DAX badge -->
           <rect x="96" y="148" width="130" height="20" fill="#3b82f610" stroke="#3b82f630" stroke-width="1" rx="3"/>
           <text x="161" y="162" text-anchor="middle" fill="#3b82f6" font-size="6.5" font-family="Inter,sans-serif">DAX · Power Query · Data Model</text>
@@ -1452,14 +1584,14 @@
         <a class="btn-link" href="https://github.com/Ballistic-02/Movie-Ratings-Analysis" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
     <!-- Project 06: Netflix -->
     <div class="project-row">
       <div class="project-preview">
         <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
           <rect width="240" height="180" fill="#0e1219"/>
           <text x="12" y="20" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Netflix Catalog · 3-Page Dashboard</text>
-
+ 
           <!-- Page tabs -->
           <rect x="12" y="26" width="64" height="16" fill="#3b82f6" rx="2"/>
           <text x="44" y="37" text-anchor="middle" fill="#fff" font-size="6" font-weight="600" font-family="Inter,sans-serif">Content</text>
@@ -1467,7 +1599,7 @@
           <text x="112" y="37" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Talent</text>
           <rect x="148" y="26" width="64" height="16" fill="#1e2333" rx="2"/>
           <text x="180" y="37" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Platform</text>
-
+ 
           <!-- Library growth line chart -->
           <text x="12" y="60" fill="#3d4d63" font-size="6.5" font-family="Inter,sans-serif">Global Library Growth</text>
           <polyline points="16,130 46,118 76,108 106,95 136,80 166,62 196,48 220,38" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
@@ -1477,7 +1609,7 @@
           <text x="76" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2017</text>
           <text x="136" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2019</text>
           <text x="196" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2021</text>
-
+ 
           <!-- genre treemap preview -->
           <rect x="12" y="152" width="55" height="20" fill="#3b82f6" rx="2"/>
           <text x="39" y="165" text-anchor="middle" fill="#fff" font-size="6" font-family="Inter,sans-serif">Drama</text>
@@ -1505,13 +1637,125 @@
         <a class="btn-link" href="https://github.com/Ballistic-02/Netflix_Entertainment_Analytics.pbix" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
+ 
+    <!-- Project 07: Chicken Republic -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- Header bar -->
+          <rect x="0" y="0" width="240" height="22" fill="#1a0a0a"/>
+          <text x="120" y="15" text-anchor="middle" fill="#cc2222" font-size="7.5" font-weight="700" font-family="Inter,sans-serif">CHICKEN REPUBLIC · 5-PAGE BI DASHBOARD</text>
+ 
+          <!-- KPI cards -->
+          <rect x="8" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="34" y="40" text-anchor="middle" fill="#cc2222" font-size="9" font-weight="700" font-family="Inter,sans-serif">0.22</text>
+          <text x="34" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Stockout Rate</text>
+ 
+          <rect x="66" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="92" y="40" text-anchor="middle" fill="#10b981" font-size="9" font-weight="700" font-family="Inter,sans-serif">₦12M</text>
+          <text x="92" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Lost Revenue</text>
+ 
+          <rect x="124" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="150" y="40" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">187K</text>
+          <text x="150" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Units Sold</text>
+ 
+          <rect x="182" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="208" y="40" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700" font-family="Inter,sans-serif">401</text>
+          <text x="208" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Stockout Days</text>
+ 
+          <!-- Stockout by branch -->
+          <text x="8" y="72" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Stockout Rate by Branch</text>
+          <text x="8" y="86" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Ajah</text>
+          <rect x="38" y="78" width="90" height="9" fill="#1e2333" rx="1"/>
+          <rect x="38" y="78" width="90" height="9" fill="#cc2222" rx="1"/>
+          <text x="132" y="86" fill="#cc2222" font-size="5.5" font-family="Inter,sans-serif">0.29</text>
+ 
+          <text x="8" y="99" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Lekki</text>
+          <rect x="38" y="91" width="74" height="9" fill="#cc222280" rx="1"/>
+          <text x="116" y="99" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.23</text>
+ 
+          <text x="8" y="112" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Ikeja</text>
+          <rect x="38" y="104" width="65" height="9" fill="#cc222260" rx="1"/>
+          <text x="107" y="112" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.21</text>
+ 
+          <text x="8" y="125" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Yaba</text>
+          <rect x="38" y="117" width="59" height="9" fill="#cc222240" rx="1"/>
+          <text x="101" y="125" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.19</text>
+ 
+          <!-- Demand by day -->
+          <text x="148" y="72" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Sales by Day of Week</text>
+          <rect x="148" y="78" width="12" height="35" fill="#cc222240" rx="1"/>
+          <rect x="163" y="80" width="12" height="33" fill="#cc222240" rx="1"/>
+          <rect x="178" y="82" width="12" height="31" fill="#cc222240" rx="1"/>
+          <rect x="193" y="84" width="12" height="29" fill="#cc222240" rx="1"/>
+          <rect x="208" y="79" width="12" height="34" fill="#cc222260" rx="1"/>
+          <rect x="223" y="75" width="12" height="38" fill="#cc2222" rx="1"/>
+          <text x="154" y="120" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Mon</text>
+          <text x="229" y="120" fill="#cc2222" font-size="4.5" font-family="Inter,sans-serif">Sat</text>
+ 
+          <!-- Pages indicator -->
+          <text x="8" y="145" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">5 Dashboard Pages:</text>
+          <rect x="8" y="150" width="42" height="14" fill="#cc222220" stroke="#cc222240" stroke-width="1" rx="2"/>
+          <text x="29" y="160" text-anchor="middle" fill="#cc2222" font-size="5" font-family="Inter,sans-serif">Executive</text>
+          <rect x="54" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="73" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Overview</text>
+          <rect x="96" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="115" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Demand</text>
+          <rect x="138" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="157" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Drivers</text>
+          <rect x="180" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="199" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Efficiency</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">07</span>
+          <span class="project-badge">Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Chicken Republic Stockout Analysis Dashboard</h3>
+        <p class="project-desc">
+          A production-grade 5-page Power BI dashboard analysing stockout patterns, demand behaviour,
+          and stocking efficiency across 5 Chicken Republic branches in Lagos (Ajah, Lekki, Ikeja,
+          Surulere, and Yaba). The dashboard was built to give operations and supply chain teams
+          actionable visibility into where, when, and why stockouts occur — and what it costs the business.
+        </p>
+        <p class="project-desc">
+          Key findings: an overall stockout rate of <strong style="color:var(--text);">0.22</strong>,
+          <strong style="color:var(--text);">₦12M in total lost revenue</strong>, and
+          <strong style="color:var(--text);">401 stockout days</strong> across the dataset. Ajah is the
+          worst-performing branch (0.29), Fried Chicken (Full) is the most frequently stocked-out item,
+          and stockouts peak between hours 19–20. Saturday drives the highest sales volume, and
+          promotions marginally reduce stockout rates (0.21 vs 0.22 without promo).
+          Suggested opening stock of <strong style="color:var(--text);">119.59 units</strong> with a
+          stock adjustment of <strong style="color:var(--text);">-6.28</strong> per cycle.
+        </p>
+        <p class="project-desc">
+          The 5 pages cover: Executive Stockout Summary, Stockout Overview, Demand Patterns,
+          External Drivers (weather and promotions), and Stocking Efficiency, each with
+          interactive slicers for branch, item, and date.
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">Power BI</span>
+          <span class="p-tag">DAX</span>
+          <span class="p-tag">Supply Chain</span>
+          <span class="p-tag">Stockout Analysis</span>
+          <span class="p-tag">5-Page Dashboard</span>
+          <span class="p-tag">Food & Beverage</span>
+          <span class="p-tag">Operations Analytics</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <span class="project-badge">Featured</span>
+        <a class="btn-link" href="https://github.com/Ballistic-02/Chicken-Republic-Analysis" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+ 
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="reveal">
     <p class="section-eyebrow">Certifications</p>
@@ -1560,9 +1804,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="reveal">
@@ -1578,15 +1822,15 @@
     </div>
     <div class="edu-block">
       <p class="edu-period">2026</p>
-      <p class="edu-institution">TechCrush — Tech for Africa Scholarship</p>
+      <p class="edu-institution">TechCrush (Tech for Africa Scholarship)</p>
       <p class="edu-degree">Data Analytics Program</p>
       <p class="edu-note">Intensive program covering Excel, Python, and Power BI for end-to-end data analysis.</p>
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="reveal">
@@ -1608,7 +1852,10 @@
       <div class="contact-panel-header">Contact Details</div>
       <div class="contact-row">
         <span class="c-label">Phone</span>
-        <span class="c-value"><a href="tel:+2349027232601">+234 902 723 2601</a></span>
+        <span class="c-value">
+          <a href="tel:+2349027232601">+234 902 723 2601</a><br/>
+          <a href="tel:+2347062029848">+234 706 202 9848</a>
+        </span>
       </div>
       <div class="contact-row">
         <span class="c-label">Email</span>
@@ -1633,23 +1880,23 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Adeoye Boluwatife Emmanuel's Portfolio</p>
+  <p>© 2026 Adeoye Boluwatife Emmanuel, Data Analyst</p>
   <p>Lagos, Nigeria</p>
 </footer>
-
+ 
 <!-- PROGRESS BAR -->
 <div id="progress-bar"></div>
-
+ 
 <!-- SCROLL TO TOP -->
 <button id="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8 12V4M4 8l4-4 4 4"/>
   </svg>
 </button>
-
+ 
 <script>
   // ── Scroll reveal ──────────────────────────────────────────
   const obs = new IntersectionObserver(
@@ -1657,51 +1904,110 @@
     { threshold: 0.07, rootMargin: '0px 0px -20px 0px' }
   );
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
+ 
   // ── Progress bar ───────────────────────────────────────────
   const bar = document.getElementById('progress-bar');
-
   function updateProgress() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = pct + '%';
+    bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
   }
-
+ 
   // ── Active nav highlight ───────────────────────────────────
   const sections = document.querySelectorAll('section[id], div[id="hero"]');
   const navLinks = document.querySelectorAll('.nav-links a');
-
   function updateActiveNav() {
     let current = 'hero';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
+      if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id');
     });
-
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
   }
-
+ 
   // ── Scroll to top button ───────────────────────────────────
   const scrollTopBtn = document.getElementById('scroll-top');
-
   window.addEventListener('scroll', () => {
     updateProgress();
     updateActiveNav();
     scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
-
-  // Run on load
   updateProgress();
   updateActiveNav();
+ 
+  // ── Skill bars animation ───────────────────────────────────
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(fill => {
+          const target = fill.getAttribute('data-width');
+          fill.style.width = '0%';
+          setTimeout(() => { fill.style.width = target; }, 150);
+        });
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  const skillBarsSection = document.getElementById('skill-bars-section');
+  if (skillBarsSection) barObs.observe(skillBarsSection);
+ 
+  // ── Hero canvas background animation ──────────────────────
+  const canvas = document.getElementById('hero-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const COLS = 20, ROWS = 10;
+    const vals = ['47.2','82','93%','↑12','3.4K','100','29','67%','↓5','14.8','56','88%','200','71','45.1','99%','↑8','32','R²','0.80','EDA','ML','BI'];
+    const cells = [];
+ 
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+ 
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        cells.push({
+          r, c,
+          val: vals[Math.floor(Math.random() * vals.length)],
+          opacity: Math.random() * 0.7 + 0.1,
+          speed: Math.random() * 0.004 + 0.002,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+ 
+    let t = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const cw = canvas.width / COLS;
+      const ch = canvas.height / ROWS;
+ 
+      // Grid lines
+      ctx.strokeStyle = 'rgba(59,130,246,0.12)';
+      ctx.lineWidth = 0.5;
+      for (let c = 0; c <= COLS; c++) {
+        ctx.beginPath(); ctx.moveTo(c * cw, 0); ctx.lineTo(c * cw, canvas.height); ctx.stroke();
+      }
+      for (let r = 0; r <= ROWS; r++) {
+        ctx.beginPath(); ctx.moveTo(0, r * ch); ctx.lineTo(canvas.width, r * ch); ctx.stroke();
+      }
+ 
+      // Floating data values
+      ctx.font = `${Math.min(cw * 0.36, 11)}px Inter, monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      cells.forEach(cell => {
+        const alpha = (Math.sin(t * cell.speed * 60 + cell.phase) + 1) / 2 * cell.opacity;
+        ctx.fillStyle = `rgba(59,130,246,${alpha})`;
+        ctx.fillText(cell.val, cell.c * cw + cw / 2, cell.r * ch + ch / 2);
+      });
+ 
+      t++;
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
 </script>
-
+ 
 </body>
 </html>
