@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MSXMEY1N03"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MSXMEY1N03');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adeoye Boluwatife Emmanuel: Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-rgb:     10,10,13;
+    --bg:         #0a0a0d;
+    --bg-card:    #141317;
+    --bg-soft:    #0f0e12;
+    --bg-line:    #26242b;
+    --bg-hover:   #1a181f;
+    --text:       #f3f1ef;
+    --muted:      #a29da3;
+    --muted2:     #605c63;
+    --accent:     #e0536e;
+    --accent-d:   #b83955;
+    --accent-lt:  rgba(224,83,110,0.12);
+    --accent-bdr: rgba(224,83,110,0.32);
+    --accent-grad: linear-gradient(135deg,#e46c86,#c53c58);
+    --green:      #22c55e;
+    --sans:       'Inter', system-ui, sans-serif;
+    --display:    'Space Grotesk', 'Sora', system-ui, sans-serif;
+    --radius:     16px;
+    --radius-sm:  9px;
+    --max:        1120px;
+    --pad-x:      clamp(1.25rem, 5vw, 3rem);
+  }
+
+  :root[data-theme="light"] {
+    --bg-rgb:     250,248,247;
+    --bg:         #faf8f7;
+    --bg-card:    #ffffff;
+    --bg-soft:    #f3efee;
+    --bg-line:    #e7e1df;
+    --bg-hover:   #f5f0ef;
+    --text:       #1b191a;
+    --muted:      #635e60;
+    --muted2:     #9a9496;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  /* ── NAV ─────────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--pad-x);
+    height: 64px;
+    background: rgba(var(--bg-rgb),0.86);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--bg-line);
+    gap: 1.5rem;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 0.35rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+
+  .theme-toggle {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--bg-line);
+    background: var(--bg-card);
+    color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .theme-toggle:hover { color: var(--accent); border-color: var(--accent-bdr); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle .icon-sun { display: none; }
+  :root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+  :root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+
+  /* ── HERO CANVAS BACKGROUND ──────────────────────────────── */
+  #hero { position: relative; overflow: hidden; }
+  #hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-inner, .hero-photo-wrap, .hero-stats { position: relative; z-index: 1; }
+
+  /* ── SKILL BARS ──────────────────────────────────────────── */
+  .skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .skill-bar-item { display: flex; flex-direction: column; gap: 0.35rem; }
+
+  .skill-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill-bar-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .skill-bar-pct {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .skill-bar-track {
+    height: 4px;
+    background: var(--bg-line);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    background: var(--accent-grad);
+    border-radius: 100px;
+    width: 0%;
+    transition: width 1.2s ease;
+  }
+
+  /* ── DIRECTIONAL ANIMATIONS ──────────────────────────────── */
+  .anim-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .anim-right { opacity: 0; transform: translateX(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .anim-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .anim-left.visible, .anim-right.visible, .anim-up.visible { opacity: 1; transform: translate(0); }
+
+  #scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 42px;
+    height: 42px;
+    background: var(--accent-grad);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.2s;
+    z-index: 150;
+    box-shadow: 0 6px 18px rgba(224,83,110,0.35);
+  }
+
+  #scroll-top.visible { opacity: 1; transform: translateY(0); }
+  #scroll-top:hover { filter: brightness(1.08); }
+  #scroll-top svg { width: 16px; height: 16px; stroke: #fff; }
+
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent-grad);
+    z-index: 200;
+    transition: width 0.1s linear;
+  }
+
+  /* ── HERO ────────────────────────────────────────────────── */
+  #hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 96px var(--pad-x) 4rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    gap: 3.5rem;
+  }
+
+  .hero-inner { display: flex; align-items: center; gap: 4rem; }
+  .hero-content { flex: 1; min-width: 0; }
+
+  .hero-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-line);
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+  }
+
+  .hero-badge .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+    flex-shrink: 0;
+  }
+
+  .hero-badge-alt { color: var(--green); border-color: rgba(34,197,94,0.25); }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(2.3rem, 5.6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title .dot-accent { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 1.02rem;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-roles { margin-bottom: 1.5rem; }
+  .hero-roles-label { font-size: 0.82rem; color: var(--muted2); margin-bottom: 0.6rem; }
+  .hero-roles-list { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+  .hero-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .stack-pill, .role-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-line);
+    color: var(--muted);
+    padding: 0.32rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  .role-pill {
+    background: var(--accent-lt);
+    border-color: var(--accent-bdr);
+    color: var(--accent);
+  }
+
+  .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    background: var(--accent-grad);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: filter 0.2s, transform 0.2s;
+    box-shadow: 0 8px 20px -6px rgba(224,83,110,0.5);
+  }
+
+  .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border: 1px solid var(--bg-line);
+    background: var(--bg-card);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary svg, .btn-ghost svg { width: 13px; height: 13px; }
+
+  /* Hero photo */
+  .hero-photo-wrap {
+    width: 300px;
+    height: 340px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--bg-line);
+    background: var(--bg-card);
+  }
+  .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; }
+
+  /* Hero stats row */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--bg-line);
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    display: block;
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+  .hero-stat-label { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── DIVIDER ─────────────────────────────────────────────── */
+  .divider { width: 100%; height: 1px; background: var(--bg-line); max-width: var(--max); margin: 0 auto; }
+
+  /* ── SECTIONS ────────────────────────────────────────────── */
+  section { padding: 5.5rem var(--pad-x); max-width: var(--max); margin: 0 auto; }
+
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 3.5rem; position: relative; padding-bottom: 1.6rem; }
+  .section-head::after {
+    content: '';
+    position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 52px; height: 3px;
+    background: var(--accent-grad);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── ABOUT ───────────────────────────────────────────────── */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .about-bio { color: var(--muted); line-height: 1.85; }
+  .about-bio p + p { margin-top: 1rem; }
+  .about-actions { display: flex; gap: 0.75rem; margin-top: 1.75rem; flex-wrap: wrap; }
+
+  .about-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--bg-line);
+    border: 1px solid var(--bg-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .about-stat {
+    background: var(--bg-card);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-stat-label { font-size: 0.8rem; color: var(--muted); }
+
+  .about-stat-value {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  /* ── SKILLS ──────────────────────────────────────────────── */
+  .skills-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-block { background: var(--bg-card); border: 1px solid var(--bg-line); border-radius: var(--radius); padding: 1.75rem; }
+
+  .skill-block-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--bg-line);
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .skill-tag {
+    font-size: 0.76rem;
+    font-weight: 400;
+    background: var(--bg-line);
+    color: var(--text);
+    padding: 0.28rem 0.7rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ── EXPERIENCE (timeline) ───────────────────────────────── */
+  .exp-table { position: relative; padding-left: 2rem; }
+  .exp-table::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: var(--bg-line);
+  }
+
+  .exp-row {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-line);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.85rem;
+    margin-bottom: 1.25rem;
+  }
+  .exp-row:last-child { margin-bottom: 0; }
+
+  .exp-row::before {
+    content: '';
+    position: absolute;
+    left: -2.05rem; top: 1.75rem;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .exp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-role {
+    font-family: var(--display);
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .exp-period { font-size: 0.78rem; color: var(--muted2); white-space: nowrap; }
+  .exp-company { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 0.9rem; }
+
+  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .exp-points li {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.65;
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .exp-points li::before {
+    content: '';
+    width: 5px; height: 5px;
+    margin-top: 0.55rem;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── PROJECTS ────────────────────────────────────────────── */
+  .project-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .project-row {
+    display: grid;
+    grid-template-columns: 240px 1fr 150px;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .project-row:hover { border-color: var(--accent-bdr); }
+
+  .project-preview {
+    border-right: 1px solid var(--bg-line);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-soft);
+    min-height: 180px;
+  }
+
+  .project-preview svg { width: 100%; height: 100%; display: block; }
+
+  .project-main { padding: 1.75rem 2rem; }
+
+  .project-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
+
+  .project-num { font-size: 0.72rem; font-weight: 600; color: var(--muted2); }
+
+  .project-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: var(--accent-lt);
+    color: var(--accent);
+    border: 1px solid var(--accent-bdr);
+    padding: 0.22rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  .project-title {
+    font-family: var(--display);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    line-height: 1.28;
+  }
+
+  .project-desc {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 580px;
+    margin-bottom: 1.1rem;
+  }
+
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+  .p-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    border: 1px solid var(--bg-line);
+    color: var(--muted);
+    padding: 0.24rem 0.65rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .project-side {
+    padding: 2rem 1.5rem;
+    border-left: 1px solid var(--bg-line);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.05rem;
+    border: 1px solid var(--bg-line);
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-link:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-link svg { width: 11px; height: 11px; }
+
+  /* ── CERTIFICATIONS ──────────────────────────────────────── */
+  .cert-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+  }
+
+  .cert-block {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s;
+  }
+
+  .cert-block:hover { border-color: var(--accent-bdr); }
+
+  .cert-icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--accent-lt);
+    border: 1px solid var(--accent-bdr);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .cert-org { font-size: 0.78rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
+  .cert-name { font-size: 0.92rem; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 0.7rem; }
+  .cert-date { font-size: 0.75rem; color: var(--muted2); }
+
+  /* ── EDUCATION ───────────────────────────────────────────── */
+  .edu-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+  .edu-block { background: var(--bg-card); border: 1px solid var(--bg-line); border-radius: var(--radius); padding: 2rem; }
+  .edu-period { font-size: 0.75rem; font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; }
+  .edu-institution { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .edu-degree { font-family: var(--display); font-size: 1.08rem; font-weight: 600; color: var(--text); line-height: 1.25; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .edu-note { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CONTACT ─────────────────────────────────────────────── */
+  .contact-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: start; }
+  .contact-intro { color: var(--muted); line-height: 1.85; margin-bottom: 1.5rem; }
+
+  .contact-email {
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    border-bottom: 2px solid var(--accent-bdr);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .contact-email:hover { border-color: var(--accent); }
+
+  .contact-panel { background: var(--bg-card); border: 1px solid var(--bg-line); border-radius: var(--radius); overflow: hidden; }
+  .contact-panel-header { background: var(--bg-line); padding: 0.9rem 1.25rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+
+  .contact-row { display: flex; align-items: center; padding: 0.95rem 1.25rem; border-bottom: 1px solid var(--bg-line); gap: 1rem; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row-icon {
+    width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0;
+    background: var(--accent-lt); border: 1px solid var(--accent-bdr); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-row-icon svg { width: 15px; height: 15px; }
+  .contact-row-body { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+  .c-label { font-size: 0.72rem; color: var(--muted2); }
+  .c-value { font-size: 0.85rem; color: var(--text); word-break: break-word; }
+  .c-value a { color: inherit; text-decoration: none; transition: color 0.15s; }
+  .c-value a:hover { color: var(--accent); }
+  .c-value.avail { color: var(--green); font-weight: 500; }
+
+  /* ── FOOTER ──────────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--bg-line);
+    padding: 1.75rem var(--pad-x);
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  footer p { font-size: 0.8rem; color: var(--muted2); }
+
+  .footer-social { display: flex; gap: 0.6rem; }
+  .footer-social a {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--bg-line);
+    color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .footer-social a:hover { color: var(--accent); border-color: var(--accent-bdr); }
+  .footer-social svg { width: 15px; height: 15px; }
+
+  /* ── REVEAL ──────────────────────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-inner { flex-direction: column-reverse; gap: 2.25rem; }
+    .hero-photo-wrap { width: 220px; height: 250px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-layout { grid-template-columns: 1fr 1fr; }
+    .skills-layout { grid-template-columns: 1fr; }
+    .cert-layout, .edu-layout { grid-template-columns: 1fr; }
+    .exp-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    .project-row { grid-template-columns: 1fr; }
+    .project-preview { min-height: 140px; border-right: none; border-bottom: 1px solid var(--bg-line); }
+    .project-side { border-left: none; border-top: 1px solid var(--bg-line); flex-direction: row; padding: 1.25rem 2rem; flex-wrap: wrap; }
+    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+
+  @media (max-width: 520px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .about-actions { flex-direction: column; align-items: stretch; }
+  }
+
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Boluwatife<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="why-me.html">Why Me</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+    <svg class="icon-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 9.5A5.5 5.5 0 016.5 2.5a5.5 5.5 0 105.9 8.6.4.4 0 00-.3-.6.4.4 0 00-.2 0z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M15 8h-1.5M2.5 8H1M12.7 3.3l-1 1M4.3 11.7l-1 1M12.7 12.7l-1-1M4.3 4.3l-1-1"/></svg>
+  </button>
+</nav>
+
+<section id="work">
+  <div class="reveal section-head">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-desc">A selection of my strongest data analytics, business intelligence, and machine learning work.</p>
+  </div>
+  <div class="project-grid reveal">
+ 
+    <!-- Project 01: Ballistic AI -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- Pipeline nodes -->
+          <circle cx="30" cy="90" r="18" fill="#1e2333" stroke="#e0536e" stroke-width="1.5"/>
+          <text x="30" y="94" text-anchor="middle" fill="#e0536e" font-size="7" font-family="Inter,sans-serif">CSV</text>
+          <line x1="48" y1="90" x2="72" y2="90" stroke="#e0536e" stroke-width="1" stroke-dasharray="3,2"/>
+          <circle cx="90" cy="90" r="18" fill="#1e2333" stroke="#e0536e" stroke-width="1.5"/>
+          <text x="90" y="87" text-anchor="middle" fill="#e0536e" font-size="6" font-family="Inter,sans-serif">Clean</text>
+          <text x="90" y="96" text-anchor="middle" fill="#e0536e" font-size="6" font-family="Inter,sans-serif">Data</text>
+          <line x1="108" y1="90" x2="132" y2="90" stroke="#e0536e" stroke-width="1" stroke-dasharray="3,2"/>
+          <circle cx="150" cy="90" r="18" fill="#1e2333" stroke="#10b981" stroke-width="1.5"/>
+          <text x="150" y="87" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Train</text>
+          <text x="150" y="96" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Model</text>
+          <line x1="168" y1="90" x2="192" y2="90" stroke="#10b981" stroke-width="1" stroke-dasharray="3,2"/>
+          <circle cx="210" cy="90" r="18" fill="#1e2333" stroke="#10b981" stroke-width="1.5"/>
+          <text x="210" y="87" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Live</text>
+          <text x="210" y="96" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Predict</text>
+          <!-- label -->
+          <text x="120" y="148" text-anchor="middle" fill="#3d4d63" font-size="8" font-family="Inter,sans-serif">AutoML Pipeline</text>
+          <!-- mini bar chart bottom left -->
+          <rect x="20" y="125" width="8" height="20" fill="#e0536e20" rx="1"/>
+          <rect x="32" y="118" width="8" height="27" fill="#e0536e40" rx="1"/>
+          <rect x="44" y="110" width="8" height="35" fill="#e0536e60" rx="1"/>
+          <rect x="56" y="105" width="8" height="40" fill="#e0536e" rx="1"/>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">01</span>
+          <span class="project-badge">Applied ML Tool</span>
+        </div>
+        <h3 class="project-title">Ballistic AI (Automated Model Builder)</h3>
+        <p class="project-desc">A browser-based, no-code AutoML tool that takes any CSV through a full end-to-end pipeline: data intake, automated cleaning, model training, and live prediction, all running client-side. Includes confusion matrices, feature importance charts, and an integrated co-pilot assistant.</p>
+        <div class="project-tags">
+          <span class="p-tag">TensorFlow.js</span><span class="p-tag">JavaScript</span><span class="p-tag">Chart.js</span><span class="p-tag">jsPDF</span><span class="p-tag">AutoML</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://ballistic-02.github.io/Ballistic.ai" target="_blank" rel="noopener">Live Tool <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 02: Melanin HR -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- Horizontal bar chart - HR demographic data -->
+          <text x="16" y="32" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Headcount by Department</text>
+          <!-- bars -->
+          <text x="16" y="52" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Engineering</text>
+          <rect x="80" y="42" width="100" height="11" fill="#e0536e" rx="2"/>
+          <text x="184" y="52" fill="#e0536e" font-size="6.5" font-family="Inter,sans-serif">47%</text>
+ 
+          <text x="16" y="72" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Marketing</text>
+          <rect x="80" y="62" width="68" height="11" fill="#e0536e40" rx="2"/>
+          <text x="152" y="72" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">32%</text>
+ 
+          <text x="16" y="92" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Operations</text>
+          <rect x="80" y="82" width="45" height="11" fill="#e0536e20" rx="2"/>
+          <text x="129" y="92" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">21%</text>
+ 
+          <!-- divider -->
+          <line x1="16" y1="108" x2="224" y2="108" stroke="#1e2333" stroke-width="1"/>
+ 
+          <!-- Donut chart - gender split -->
+          <text x="16" y="124" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Gender Distribution</text>
+          <circle cx="60" cy="150" r="22" fill="none" stroke="#e0536e" stroke-width="8" stroke-dasharray="83 53" stroke-dashoffset="0"/>
+          <circle cx="60" cy="150" r="22" fill="none" stroke="#1e2333" stroke-width="8" stroke-dasharray="53 83" stroke-dashoffset="-83"/>
+          <text x="60" y="154" text-anchor="middle" fill="#e2e8f0" font-size="8" font-weight="600" font-family="Inter,sans-serif">61%</text>
+ 
+          <rect x="96" y="139" width="8" height="8" fill="#e0536e" rx="1"/>
+          <text x="108" y="147" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Female</text>
+          <rect x="96" y="153" width="8" height="8" fill="#1e2333" stroke="#3d4d63" stroke-width="1" rx="1"/>
+          <text x="108" y="161" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Male</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">02</span>
+          <span class="project-badge">Excel Analytics</span>
+        </div>
+        <h3 class="project-title">Melanin HR Analysis &amp; Dashboard</h3>
+        <p class="project-desc">Explored workforce data through an HR equity lens. Built entirely in Excel, importing and cleaning raw HR records, using pivot tables and conditional logic to surface patterns in headcount, department distribution, and demographic breakdowns, delivered via an interactive dashboard.</p>
+        <div class="project-tags">
+          <span class="p-tag">Excel</span><span class="p-tag">Pivot Tables</span><span class="p-tag">HR Analytics</span><span class="p-tag">Dashboard</span><span class="p-tag">Equity Analysis</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://1drv.ms/x/c/bedcaf583f7627fe/IQD0qVDSDs9xRaiklJeEwz0VAR7xBk10Z-yB5RNZzi8uqDI?e=navuHi" target="_blank" rel="noopener">View File <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 03: Titanic -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <text x="16" y="28" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Survival Rate by Gender</text>
+ 
+          <!-- Female bar -->
+          <text x="16" y="56" fill="#7e8fa8" font-size="7" font-family="Inter,sans-serif">Female</text>
+          <rect x="70" y="44" width="130" height="16" fill="#1e2333" rx="2"/>
+          <rect x="70" y="44" width="96" height="16" fill="#10b981" rx="2"/>
+          <text x="172" y="56" fill="#10b981" font-size="7" font-weight="600" font-family="Inter,sans-serif">74%</text>
+ 
+          <!-- Male bar -->
+          <text x="16" y="84" fill="#7e8fa8" font-size="7" font-family="Inter,sans-serif">Male</text>
+          <rect x="70" y="72" width="130" height="16" fill="#1e2333" rx="2"/>
+          <rect x="70" y="72" width="25" height="16" fill="#e0536e" rx="2"/>
+          <text x="100" y="84" fill="#e0536e" font-size="7" font-weight="600" font-family="Inter,sans-serif">19%</text>
+ 
+          <line x1="16" y1="102" x2="224" y2="102" stroke="#1e2333" stroke-width="1"/>
+          <text x="16" y="116" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Survival by Class</text>
+ 
+          <!-- Class bars -->
+          <text x="16" y="136" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">1st Class</text>
+          <rect x="70" y="126" width="130" height="11" fill="#1e2333" rx="2"/>
+          <rect x="70" y="126" width="82" height="11" fill="#e0536e" rx="2"/>
+          <text x="156" y="136" fill="#e0536e" font-size="6.5" font-family="Inter,sans-serif">63%</text>
+ 
+          <text x="16" y="154" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">2nd Class</text>
+          <rect x="70" y="144" width="130" height="11" fill="#1e2333" rx="2"/>
+          <rect x="70" y="144" width="61" height="11" fill="#e0536e40" rx="2"/>
+          <text x="135" y="154" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">47%</text>
+ 
+          <text x="16" y="172" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">3rd Class</text>
+          <rect x="70" y="162" width="130" height="11" fill="#1e2333" rx="2"/>
+          <rect x="70" y="162" width="31" height="11" fill="#e0536e20" rx="2"/>
+          <text x="105" y="172" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">24%</text>
+ 
+          <!-- accuracy badge -->
+          <rect x="172" y="108" width="54" height="22" fill="#10b98120" stroke="#10b981" stroke-width="1" rx="3"/>
+          <text x="199" y="118" text-anchor="middle" fill="#10b981" font-size="6" font-family="Inter,sans-serif">Accuracy</text>
+          <text x="199" y="127" text-anchor="middle" fill="#10b981" font-size="8" font-weight="700" font-family="Inter,sans-serif">80.4%</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">03</span>
+          <span class="project-badge">Machine Learning</span>
+        </div>
+        <h3 class="project-title">Titanic Survival Rate Prediction</h3>
+        <p class="project-desc">Supervised ML classification using the Titanic dataset. Pipeline covers EDA, feature engineering (FamilySize, IsAlone, binned age/fare), missing value handling, and categorical encoding. Achieved 80.4% accuracy with Logistic Regression. Gender was the strongest predictor; class acted as a proxy for resource access.</p>
+        <div class="project-tags">
+          <span class="p-tag">Python</span><span class="p-tag">Scikit-learn</span><span class="p-tag">Jupyter</span><span class="p-tag">EDA</span><span class="p-tag">Classification</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://github.com/Ballistic-02/Titanic-Survival-Rate-Prediction" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 04: Movie Ratings Excel -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- KPI row -->
+          <rect x="12" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
+          <text x="44" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Revenue</text>
+          <text x="44" y="42" text-anchor="middle" fill="#10b981" font-size="9" font-weight="700" font-family="Inter,sans-serif">$1.34M</text>
+ 
+          <rect x="88" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
+          <text x="120" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Avg Rating</text>
+          <text x="120" y="42" text-anchor="middle" fill="#e0536e" font-size="9" font-weight="700" font-family="Inter,sans-serif">4.20/5</text>
+ 
+          <rect x="164" y="14" width="64" height="36" fill="#1e2333" rx="3"/>
+          <text x="196" y="28" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Watch Time</text>
+          <text x="196" y="42" text-anchor="middle" fill="#e0536e" font-size="9" font-weight="700" font-family="Inter,sans-serif">99.5m</text>
+ 
+          <!-- ROI by genre bar chart -->
+          <text x="12" y="68" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">ROI by Genre</text>
+          <rect x="12" y="140" width="18" height="28" fill="#e0536e20" rx="1"/>
+          <text x="21" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Act</text>
+          <rect x="36" y="120" width="18" height="48" fill="#e0536e40" rx="1"/>
+          <text x="45" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Ani</text>
+          <rect x="60" y="130" width="18" height="38" fill="#e0536e40" rx="1"/>
+          <text x="69" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Com</text>
+          <rect x="84" y="100" width="18" height="68" fill="#e0536e" rx="1"/>
+          <text x="93" y="155" text-anchor="middle" fill="#e0536e" font-size="5" font-weight="600" font-family="Inter,sans-serif">Dra</text>
+          <rect x="108" y="115" width="18" height="53" fill="#e0536e40" rx="1"/>
+          <text x="117" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Hor</text>
+          <rect x="132" y="125" width="18" height="43" fill="#e0536e20" rx="1"/>
+          <text x="141" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Rom</text>
+          <rect x="156" y="108" width="18" height="60" fill="#e0536e40" rx="1"/>
+          <text x="165" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Sci</text>
+          <rect x="180" y="135" width="18" height="33" fill="#e0536e20" rx="1"/>
+          <text x="189" y="155" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Thr</text>
+          <line x1="12" y1="168" x2="220" y2="168" stroke="#1e2333" stroke-width="1"/>
+          <text x="120" y="176" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Drama leads ROI · France top market</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">04</span>
+          <span class="project-badge">Excel Analytics</span>
+        </div>
+        <h3 class="project-title">Synthetic Movie Ratings Analysis &amp; Dashboard</h3>
+        <p class="project-desc">End-to-end analysis of a global movie ratings dataset across genre, country, age, and subscription type — built in Excel. Key metrics: $1.34M revenue vs $482K budget, 4.20/5 rating. Interactive dashboard with slicers for genre, country, age, gender, subscription type, and release year.</p>
+        <div class="project-tags">
+          <span class="p-tag">Excel</span><span class="p-tag">Pivot Tables</span><span class="p-tag">Slicers</span><span class="p-tag">Dashboard</span><span class="p-tag">Revenue Analysis</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://1drv.ms/x/c/bedcaf583f7627fe/IQDiVj66CPe6TY1X52Ken1PMASEPQtsx2TxxFIgAV5HB5YA?e=gcTwSD" target="_blank" rel="noopener">View File <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 05: Movie Ratings Power BI -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- Power BI style layout -->
+          <text x="12" y="20" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Power BI Dashboard · Custom DAX</text>
+          <!-- KPI blocks -->
+          <rect x="12" y="28" width="100" height="40" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="22" y="42" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Top ROI Genre</text>
+          <text x="22" y="58" fill="#e0536e" font-size="11" font-weight="700" font-family="Inter,sans-serif">Drama</text>
+ 
+          <rect x="124" y="28" width="104" height="40" fill="#1e2333" rx="3" stroke="#10b98120" stroke-width="1"/>
+          <text x="134" y="42" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Top Revenue Market</text>
+          <text x="134" y="58" fill="#10b981" font-size="11" font-weight="700" font-family="Inter,sans-serif">France</text>
+ 
+          <!-- Subscription donut -->
+          <text x="12" y="86" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Watch Time by Subscription</text>
+          <circle cx="50" cy="130" r="28" fill="none" stroke="#e0536e" stroke-width="9" stroke-dasharray="59 118"/>
+          <circle cx="50" cy="130" r="28" fill="none" stroke="#e0536e40" stroke-width="9" stroke-dasharray="39 118" stroke-dashoffset="-59"/>
+          <circle cx="50" cy="130" r="28" fill="none" stroke="#1e2333" stroke-width="9" stroke-dasharray="20 118" stroke-dashoffset="-98"/>
+          <text x="50" y="134" text-anchor="middle" fill="#e2e8f0" font-size="7" font-weight="700" font-family="Inter,sans-serif">STD</text>
+ 
+          <rect x="96" y="98" width="8" height="8" fill="#e0536e" rx="1"/>
+          <text x="108" y="106" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Standard 50%</text>
+          <rect x="96" y="112" width="8" height="8" fill="#e0536e40" rx="1"/>
+          <text x="108" y="120" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Premium 33%</text>
+          <rect x="96" y="126" width="8" height="8" fill="#1e2333" stroke="#3d4d63" stroke-width="1" rx="1"/>
+          <text x="108" y="134" fill="#7e8fa8" font-size="6.5" font-family="Inter,sans-serif">Free 17%</text>
+ 
+          <!-- DAX badge -->
+          <rect x="96" y="148" width="130" height="20" fill="#e0536e10" stroke="#e0536e30" stroke-width="1" rx="3"/>
+          <text x="161" y="162" text-anchor="middle" fill="#e0536e" font-size="6.5" font-family="Inter,sans-serif">DAX · Power Query · Data Model</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">05</span>
+          <span class="project-badge">Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Synthetic Movie Ratings Dashboard (Power BI)</h3>
+        <p class="project-desc">The same dataset reimplemented in Power BI with deeper technical depth. Custom DAX measures dynamically calculate KPI text-based winners. Power Query handles schema optimisation, type casting, null handling, and a lean data model. Drama is top-ROI genre; France generates maximum revenue.</p>
+        <div class="project-tags">
+          <span class="p-tag">Power BI</span><span class="p-tag">DAX</span><span class="p-tag">Power Query</span><span class="p-tag">KPI Design</span><span class="p-tag">Data Modelling</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://github.com/Ballistic-02/Movie-Ratings-Analysis" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 06: Netflix -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <text x="12" y="20" fill="#3d4d63" font-size="7" font-family="Inter,sans-serif">Netflix Catalog · 3-Page Dashboard</text>
+ 
+          <!-- Page tabs -->
+          <rect x="12" y="26" width="64" height="16" fill="#e0536e" rx="2"/>
+          <text x="44" y="37" text-anchor="middle" fill="#fff" font-size="6" font-weight="600" font-family="Inter,sans-serif">Content</text>
+          <rect x="80" y="26" width="64" height="16" fill="#1e2333" rx="2"/>
+          <text x="112" y="37" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Talent</text>
+          <rect x="148" y="26" width="64" height="16" fill="#1e2333" rx="2"/>
+          <text x="180" y="37" text-anchor="middle" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Platform</text>
+ 
+          <!-- Library growth line chart -->
+          <text x="12" y="60" fill="#3d4d63" font-size="6.5" font-family="Inter,sans-serif">Global Library Growth</text>
+          <polyline points="16,130 46,118 76,108 106,95 136,80 166,62 196,48 220,38" fill="none" stroke="#e0536e" stroke-width="1.5"/>
+          <polyline points="16,130 46,118 76,108 106,95 136,80 166,62 196,48 220,38 220,135 16,135" fill="#e0536e10"/>
+          <!-- x axis labels -->
+          <text x="16" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2015</text>
+          <text x="76" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2017</text>
+          <text x="136" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2019</text>
+          <text x="196" y="144" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">2021</text>
+ 
+          <!-- genre treemap preview -->
+          <rect x="12" y="152" width="55" height="20" fill="#e0536e" rx="2"/>
+          <text x="39" y="165" text-anchor="middle" fill="#fff" font-size="6" font-family="Inter,sans-serif">Drama</text>
+          <rect x="71" y="152" width="38" height="20" fill="#e0536e80" rx="2"/>
+          <text x="90" y="165" text-anchor="middle" fill="#fff" font-size="6" font-family="Inter,sans-serif">Comedy</text>
+          <rect x="113" y="152" width="30" height="20" fill="#e0536e40" rx="2"/>
+          <text x="128" y="165" text-anchor="middle" fill="#7e8fa8" font-size="6" font-family="Inter,sans-serif">Action</text>
+          <rect x="147" y="152" width="22" height="20" fill="#e0536e20" rx="2"/>
+          <rect x="173" y="152" width="16" height="20" fill="#1e2333" rx="2"/>
+          <rect x="193" y="152" width="12" height="20" fill="#1e2333" rx="2"/>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">06</span>
+          <span class="project-badge">Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Netflix Catalog Analytics &amp; Operational Optimization</h3>
+        <p class="project-desc">Production-grade 3-page Power BI dashboard reverse-engineering the Netflix global catalog. Rigorous Power Query ETL: multi-value fields (country, director, genre) split into distinct rows; duration and date fields engineered for accurate metric isolation. Pages cover content strategy, talent networks, and upload seasonality.</p>
+        <div class="project-tags">
+          <span class="p-tag">Power BI</span><span class="p-tag">DAX</span><span class="p-tag">Power Query</span><span class="p-tag">ETL</span><span class="p-tag">Content Strategy</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <a class="btn-link" href="https://github.com/Ballistic-02/Netflix_Entertainment_Analytics.pbix" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+ 
+    <!-- Project 07: Chicken Republic -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <!-- Header bar -->
+          <rect x="0" y="0" width="240" height="22" fill="#1a0a0a"/>
+          <text x="120" y="15" text-anchor="middle" fill="#cc2222" font-size="7.5" font-weight="700" font-family="Inter,sans-serif">CHICKEN REPUBLIC · 5-PAGE BI DASHBOARD</text>
+ 
+          <!-- KPI cards -->
+          <rect x="8" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="34" y="40" text-anchor="middle" fill="#cc2222" font-size="9" font-weight="700" font-family="Inter,sans-serif">0.22</text>
+          <text x="34" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Stockout Rate</text>
+ 
+          <rect x="66" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="92" y="40" text-anchor="middle" fill="#10b981" font-size="9" font-weight="700" font-family="Inter,sans-serif">₦12M</text>
+          <text x="92" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Lost Revenue</text>
+ 
+          <rect x="124" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="150" y="40" text-anchor="middle" fill="#e0536e" font-size="9" font-weight="700" font-family="Inter,sans-serif">187K</text>
+          <text x="150" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Units Sold</text>
+ 
+          <rect x="182" y="28" width="52" height="30" fill="#1e2333" rx="3" stroke="#cc222230" stroke-width="1"/>
+          <text x="208" y="40" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700" font-family="Inter,sans-serif">401</text>
+          <text x="208" y="51" text-anchor="middle" fill="#3d4d63" font-size="5.5" font-family="Inter,sans-serif">Stockout Days</text>
+ 
+          <!-- Stockout by branch -->
+          <text x="8" y="72" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Stockout Rate by Branch</text>
+          <text x="8" y="86" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Ajah</text>
+          <rect x="38" y="78" width="90" height="9" fill="#1e2333" rx="1"/>
+          <rect x="38" y="78" width="90" height="9" fill="#cc2222" rx="1"/>
+          <text x="132" y="86" fill="#cc2222" font-size="5.5" font-family="Inter,sans-serif">0.29</text>
+ 
+          <text x="8" y="99" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Lekki</text>
+          <rect x="38" y="91" width="74" height="9" fill="#cc222280" rx="1"/>
+          <text x="116" y="99" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.23</text>
+ 
+          <text x="8" y="112" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Ikeja</text>
+          <rect x="38" y="104" width="65" height="9" fill="#cc222260" rx="1"/>
+          <text x="107" y="112" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.21</text>
+ 
+          <text x="8" y="125" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">Yaba</text>
+          <rect x="38" y="117" width="59" height="9" fill="#cc222240" rx="1"/>
+          <text x="101" y="125" fill="#7e8fa8" font-size="5.5" font-family="Inter,sans-serif">0.19</text>
+ 
+          <!-- Demand by day -->
+          <text x="148" y="72" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Sales by Day of Week</text>
+          <rect x="148" y="78" width="12" height="35" fill="#cc222240" rx="1"/>
+          <rect x="163" y="80" width="12" height="33" fill="#cc222240" rx="1"/>
+          <rect x="178" y="82" width="12" height="31" fill="#cc222240" rx="1"/>
+          <rect x="193" y="84" width="12" height="29" fill="#cc222240" rx="1"/>
+          <rect x="208" y="79" width="12" height="34" fill="#cc222260" rx="1"/>
+          <rect x="223" y="75" width="12" height="38" fill="#cc2222" rx="1"/>
+          <text x="154" y="120" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Mon</text>
+          <text x="229" y="120" fill="#cc2222" font-size="4.5" font-family="Inter,sans-serif">Sat</text>
+ 
+          <!-- Pages indicator -->
+          <text x="8" y="145" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">5 Dashboard Pages:</text>
+          <rect x="8" y="150" width="42" height="14" fill="#cc222220" stroke="#cc222240" stroke-width="1" rx="2"/>
+          <text x="29" y="160" text-anchor="middle" fill="#cc2222" font-size="5" font-family="Inter,sans-serif">Executive</text>
+          <rect x="54" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="73" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Overview</text>
+          <rect x="96" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="115" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Demand</text>
+          <rect x="138" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="157" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Drivers</text>
+          <rect x="180" y="150" width="38" height="14" fill="#1e2333" rx="2"/>
+          <text x="199" y="160" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Efficiency</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">07</span>
+          <span class="project-badge">Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Chicken Republic Stockout Analysis Dashboard</h3>
+        <p class="project-desc">
+          A production-grade 5-page Power BI dashboard analysing stockout patterns, demand behaviour,
+          and stocking efficiency across 5 Chicken Republic branches in Lagos (Ajah, Lekki, Ikeja,
+          Surulere, and Yaba). The dashboard was built to give operations and supply chain teams
+          actionable visibility into where, when, and why stockouts occur and what it costs the business.
+        </p>
+        <p class="project-desc">
+          Key findings: an overall stockout rate of <strong style="color:var(--text);">0.22</strong>,
+          <strong style="color:var(--text);">₦12M in total lost revenue</strong>, and
+          <strong style="color:var(--text);">401 stockout days</strong> across the dataset. Ajah is the
+          worst-performing branch (0.29), Fried Chicken (Full) is the most frequently stocked-out item,
+          and stockouts peak between hours 19–20. Saturday drives the highest sales volume, and
+          promotions marginally reduce stockout rates (0.21 vs 0.22 without promo).
+          Suggested opening stock of <strong style="color:var(--text);">119.59 units</strong> with a
+          stock adjustment of <strong style="color:var(--text);">-6.28</strong> per cycle.
+        </p>
+        <p class="project-desc">
+          The 5 pages cover: Executive Stockout Summary, Stockout Overview, Demand Patterns,
+          External Drivers (weather and promotions), and Stocking Efficiency, each with
+          interactive slicers for branch, item, and date.
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">Power BI</span>
+          <span class="p-tag">DAX</span>
+          <span class="p-tag">Supply Chain</span>
+          <span class="p-tag">Stockout Analysis</span>
+          <span class="p-tag">5-Page Dashboard</span>
+          <span class="p-tag">Food & Beverage</span>
+          <span class="p-tag">Operations Analytics</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <span class="project-badge">Featured</span>
+        <a class="btn-link" href="https://github.com/Ballistic-02/Chicken-Republic-Analysis" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+ 
+    </div>
+ 
+    <!-- Project 08: HVAC -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <rect x="0" y="0" width="240" height="20" fill="#0a1628"/>
+          <text x="120" y="14" text-anchor="middle" fill="#e0536e" font-size="7" font-weight="700" font-family="Inter,sans-serif">HVAC ENERGY EFFICIENCY · 4-PAGE DASHBOARD</text>
+          <rect x="6" y="26" width="54" height="28" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="33" y="37" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700" font-family="Inter,sans-serif">0.48</text>
+          <text x="33" y="48" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Avg kW per RT</text>
+          <rect x="64" y="26" width="54" height="28" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="91" y="37" text-anchor="middle" fill="#e0536e" font-size="9" font-weight="700" font-family="Inter,sans-serif">1.73M</text>
+          <text x="91" y="48" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Total kWh</text>
+          <rect x="122" y="26" width="54" height="28" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="149" y="37" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="700" font-family="Inter,sans-serif">520.94</text>
+          <text x="149" y="48" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Avg Load (RT)</text>
+          <rect x="180" y="26" width="54" height="28" fill="#1e2333" rx="3" stroke="#ef444430" stroke-width="1"/>
+          <text x="207" y="37" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700" font-family="Inter,sans-serif">10%</text>
+          <text x="207" y="48" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Inefficient Rate</text>
+          <text x="6" y="65" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Monthly Efficiency Trend (kW/RT)</text>
+          <polyline points="6,110 26,108 46,105 66,109 86,104 106,107 126,103 146,108 166,105 186,102 206,106 226,104" fill="none" stroke="#10b981" stroke-width="1.5"/>
+          <polyline points="6,110 26,108 46,105 66,109 86,104 106,107 126,103 146,108 166,105 186,102 206,106 226,104 226,118 6,118" fill="#10b98115"/>
+          <line x1="6" y1="106" x2="230" y2="106" stroke="#e0536e" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="210" y="104" fill="#e0536e" font-size="5" font-family="Inter,sans-serif">0.48</text>
+          <line x1="56" y1="85" x2="56" y2="105" stroke="#ef4444" stroke-width="1.5"/>
+          <circle cx="56" cy="84" r="2.5" fill="#ef4444"/>
+          <line x1="176" y1="88" x2="176" y2="105" stroke="#ef4444" stroke-width="1.5"/>
+          <circle cx="176" cy="87" r="2.5" fill="#ef4444"/>
+          <text x="60" y="82" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">1.51 spike</text>
+          <text x="6" y="128" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Avg Load by Hour</text>
+          <rect x="6" y="160" width="7" height="10" fill="#e0536e20" rx="1"/>
+          <rect x="15" y="155" width="7" height="15" fill="#e0536e30" rx="1"/>
+          <rect x="24" y="140" width="7" height="30" fill="#e0536e50" rx="1"/>
+          <rect x="33" y="133" width="7" height="37" fill="#e0536e70" rx="1"/>
+          <rect x="42" y="130" width="7" height="40" fill="#e0536e" rx="1"/>
+          <rect x="51" y="131" width="7" height="39" fill="#e0536e" rx="1"/>
+          <rect x="60" y="134" width="7" height="36" fill="#e0536e80" rx="1"/>
+          <rect x="69" y="140" width="7" height="30" fill="#e0536e50" rx="1"/>
+          <rect x="78" y="150" width="7" height="20" fill="#e0536e30" rx="1"/>
+          <rect x="87" y="160" width="7" height="10" fill="#e0536e15" rx="1"/>
+          <text x="6" y="175" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">00:00</text>
+          <text x="38" y="175" fill="#e0536e" font-size="5" font-family="Inter,sans-serif">Peak 08:00</text>
+          <text x="87" y="175" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">20:00</text>
+          <rect x="118" y="128" width="55" height="12" fill="#e0536e20" stroke="#e0536e40" stroke-width="1" rx="2"/>
+          <text x="145" y="137" text-anchor="middle" fill="#e0536e" font-size="5" font-family="Inter,sans-serif">Executive Summary</text>
+          <rect x="177" y="128" width="57" height="12" fill="#1e2333" rx="2"/>
+          <text x="205" y="137" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Weather Impact</text>
+          <rect x="118" y="143" width="55" height="12" fill="#1e2333" rx="2"/>
+          <text x="145" y="152" text-anchor="middle" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Time Patterns</text>
+          <rect x="177" y="143" width="57" height="12" fill="#ef444415" stroke="#ef444430" stroke-width="1" rx="2"/>
+          <text x="205" y="152" text-anchor="middle" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">Anomaly Detection</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">08</span>
+          <span class="project-badge">Business Intelligence</span>
+        </div>
+        <h3 class="project-title">HVAC Energy Efficiency &amp; Performance Analytics</h3>
+        <p class="project-desc">
+          An end-to-end Power BI dashboard transforming complex IoT sensor logs from a commercial
+          HVAC chiller plant into actionable energy insights, helping facility managers identify
+          inefficiencies, reduce operational costs, and optimise building cooling performance.
+          Built on a star schema data model with custom DAX measures and a dark-mode visual layout.
+        </p>
+        <p class="project-desc">
+          Key metrics: <strong style="color:var(--text);">0.48 kW/RT</strong> average efficiency,
+          <strong style="color:var(--text);">1.73M kWh</strong> total energy consumption,
+          <strong style="color:var(--text);">520.94 RT</strong> average building load, and a
+          <strong style="color:var(--text);">10% inefficient rate</strong> across 14K logged intervals
+          with anomaly spikes reaching 1.51 kW/RT. Building demand peaks sharply at 08:00 AM and
+          ramps down after 08:00 PM, exposing clear off-hour setback opportunities.
+        </p>
+        <p class="project-desc">
+          The 4 pages cover: Executive Summary (baseline KPIs and multi-year trend analysis),
+          Weather Impact (efficiency vs. outdoor temperature and humidity), Time Pattern Analysis
+          (hourly, daily, and weekday/weekend load behaviour), and Energy Efficiency &amp; Anomalies
+          (flagging 1K inefficient intervals and isolating system performance spikes).
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">Power BI</span>
+          <span class="p-tag">DAX</span>
+          <span class="p-tag">Power Query</span>
+          <span class="p-tag">IoT Data</span>
+          <span class="p-tag">Star Schema</span>
+          <span class="p-tag">Anomaly Detection</span>
+          <span class="p-tag">Energy Analytics</span>
+          <span class="p-tag">4-Page Dashboard</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <span class="project-badge">Engineering + Data</span>
+        <a class="btn-link" href="https://github.com/Ballistic-02/HVAC-Analysis" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+ 
+    </div>
+ 
+    <!-- Project 09: Predictive Maintenance -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <rect x="0" y="0" width="240" height="20" fill="#0a1628"/>
+          <text x="120" y="14" text-anchor="middle" fill="#e0536e" font-size="6.5" font-weight="700" font-family="Inter,sans-serif">PREDICTIVE MAINTENANCE · Python + Power BI</text>
+ 
+          <!-- KPI row -->
+          <rect x="6" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#10b98130" stroke-width="1"/>
+          <text x="31" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700" font-family="Inter,sans-serif">0.9985</text>
+          <text x="31" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">ROC-AUC</text>
+ 
+          <rect x="60" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="85" y="38" text-anchor="middle" fill="#e0536e" font-size="10" font-weight="700" font-family="Inter,sans-serif">97%</text>
+          <text x="85" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Recall</text>
+ 
+          <rect x="114" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#f59e0b30" stroke-width="1"/>
+          <text x="139" y="38" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700" font-family="Inter,sans-serif">19</text>
+          <text x="139" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Equipment Units</text>
+ 
+          <rect x="168" y="26" width="66" height="28" fill="#1e2333" rx="3" stroke="#ef444430" stroke-width="1"/>
+          <text x="201" y="38" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700" font-family="Inter,sans-serif">148</text>
+          <text x="201" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Failure Events</text>
+ 
+          <!-- Degradation curve -->
+          <text x="6" y="65" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Sensor Degradation Signal (14–28 days pre-failure)</text>
+          <!-- Normal baseline -->
+          <polyline points="6,105 30,104 54,106 78,105 90,104" fill="none" stroke="#10b981" stroke-width="1.2"/>
+          <!-- Degradation ramp -->
+          <polyline points="90,104 100,103 108,101 116,97 122,92 128,85 134,76 140,65 146,55" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+          <polyline points="6,105 30,104 54,106 78,105 90,104 100,103 108,101 116,97 122,92 128,85 134,76 140,65 146,55 146,118 6,118" fill="#e0536e06"/>
+          <!-- Failure marker -->
+          <line x1="146" y1="50" x2="146" y2="118" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+          <circle cx="146" cy="50" r="3" fill="#ef4444"/>
+          <text x="150" y="54" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">FAILURE</text>
+          <!-- 7-day window bracket -->
+          <line x1="120" y1="120" x2="146" y2="120" stroke="#f59e0b" stroke-width="1"/>
+          <line x1="120" y1="117" x2="120" y2="123" stroke="#f59e0b" stroke-width="1"/>
+          <line x1="146" y1="117" x2="146" y2="123" stroke="#f59e0b" stroke-width="1"/>
+          <text x="130" y="130" text-anchor="middle" fill="#f59e0b" font-size="5" font-family="Inter,sans-serif">7-day window</text>
+          <!-- Axis labels -->
+          <text x="6" y="115" fill="#3d4d63" font-size="5" font-family="Inter,sans-serif">Normal</text>
+          <text x="95" y="115" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">Degrading</text>
+ 
+          <!-- Risk matrix mini -->
+          <text x="162" y="65" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Risk Distribution</text>
+          <rect x="162" y="70" width="72" height="10" fill="#ef444420" rx="1"/>
+          <rect x="162" y="70" width="22" height="10" fill="#ef4444" rx="1"/>
+          <text x="188" y="79" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">Critical (≥0.7)</text>
+          <rect x="162" y="83" width="72" height="10" fill="#f59e0b20" rx="1"/>
+          <rect x="162" y="83" width="40" height="10" fill="#f59e0b" rx="1"/>
+          <text x="206" y="92" fill="#f59e0b" font-size="5" font-family="Inter,sans-serif">Watch</text>
+          <rect x="162" y="96" width="72" height="10" fill="#10b98120" rx="1"/>
+          <rect x="162" y="96" width="55" height="10" fill="#10b981" rx="1"/>
+          <text x="221" y="105" fill="#10b981" font-size="5" font-family="Inter,sans-serif">Healthy</text>
+ 
+          <!-- 4 dashboard pages -->
+          <text x="6" y="148" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">4 Dashboard Pages:</text>
+          <rect x="6" y="153" width="50" height="12" fill="#e0536e20" stroke="#e0536e40" stroke-width="1" rx="2"/>
+          <text x="31" y="162" text-anchor="middle" fill="#e0536e" font-size="4.5" font-family="Inter,sans-serif">Fleet Overview</text>
+          <rect x="60" y="153" width="50" height="12" fill="#1e2333" rx="2"/>
+          <text x="85" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Deep Dive</text>
+          <rect x="114" y="153" width="50" height="12" fill="#1e2333" rx="2"/>
+          <text x="139" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Risk & Predict</text>
+          <rect x="168" y="153" width="66" height="12" fill="#1e2333" rx="2"/>
+          <text x="201" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Maintenance Impact</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">09</span>
+          <span class="project-badge">ML + Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Predictive Maintenance Analytics (Industrial Failure Prediction)</h3>
+        <p class="project-desc">
+          An end-to-end predictive maintenance system bridging mechanical engineering domain knowledge
+          with machine learning, simulating a physics-informed sensor fleet of 19 industrial units
+          and building a failure-prediction pipeline that flags at-risk equipment
+          <strong style="color:var(--text);">7 days before failure</strong>. Results feed a
+          4-page Power BI dashboard designed for fleet managers and maintenance planners.
+        </p>
+        <p class="project-desc">
+          The synthetic dataset isn't random noise, it's built on realistic degradation physics:
+          vibration and temperature climbing on an accelerating curve in the weeks before failure,
+          current draw rising with mechanical resistance, pump pressure dropping under cavitation.
+          41,363 sensor readings across 4 equipment types, 8 failure modes, and an 18-month
+          simulation window. A <strong style="color:var(--text);">Random Forest Classifier</strong>
+          with time-aware train/test split (no data leakage) achieves
+          <strong style="color:var(--text);">ROC-AUC 0.9985</strong>,
+          <strong style="color:var(--text);">97% recall</strong>, and catches
+          <strong style="color:var(--text);">799 of 825</strong> pre-failure windows in the test set.
+          Top features: current vibration level, 3-day vibration slope, and rolling vibration volatility
+          consistent with real-world condition monitoring literature.
+        </p>
+        <p class="project-desc">
+          The Power BI dashboard covers: Fleet Overview (KPIs, risk distribution, top-5 at-risk units),
+          Equipment Deep Dive (live sensor trends with danger-zone lines per unit), Failure Risk &amp;
+          Predictions (fleet risk ranking matrix and failure mode breakdown), and Maintenance Impact
+          (MTBF and cost avoidance from predictive vs. reactive strategy).
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">Python</span>
+          <span class="p-tag">Scikit-learn</span>
+          <span class="p-tag">Random Forest</span>
+          <span class="p-tag">Power BI</span>
+          <span class="p-tag">DAX</span>
+          <span class="p-tag">IoT / Sensor Data</span>
+          <span class="p-tag">Anomaly Detection</span>
+          <span class="p-tag">Feature Engineering</span>
+          <span class="p-tag">Industrial Analytics</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <span class="project-badge">Flagship Project</span>
+        <a class="btn-link" href="https://github.com/Ballistic-02/Predictive-Maintenance-Analysis" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Adeoye Boluwatife Emmanuel &middot; Lagos, Nigeria</p>
+  <div class="footer-social">
+    <a href="https://github.com/Ballistic-02" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/bea2002" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 0h-11A2.5 2.5 0 000 2.5v11A2.5 2.5 0 002.5 16h11a2.5 2.5 0 002.5-2.5v-11A2.5 2.5 0 0013.5 0zM4.94 13.5H2.42V6h2.52v7.5zM3.68 4.93a1.46 1.46 0 110-2.92 1.46 1.46 0 010 2.92zM13.5 13.5h-2.5V9.7c0-.9-.02-2.06-1.25-2.06-1.26 0-1.45.98-1.45 1.99v3.87H5.8V6h2.4v1.03h.03c.34-.63 1.16-1.3 2.38-1.3 2.54 0 3 1.68 3 3.86v3.91z"/></svg>
+    </a>
+    <a href="mailto:boluwatifeadeoye02@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12v10H2z"/><path d="M2.5 3.5l5.5 5 5.5-5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<div id="progress-bar"></div>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 12V4M4 8l4-4 4 4"/>
+  </svg>
+</button>
+
+<script>
+  // ── Theme toggle ───────────────────────────────────────────
+  (function() {
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.setAttribute('data-theme', 'light');
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      if (isLight) { root.removeAttribute('data-theme'); localStorage.setItem('theme', 'dark'); }
+      else { root.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); }
+    });
+  })();
+
+  // ── Scroll reveal ──────────────────────────────────────────
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }),
+    { threshold: 0.07, rootMargin: '0px 0px -20px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+ 
+  // ── Progress bar ───────────────────────────────────────────
+  const bar = document.getElementById('progress-bar');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  }
+  
+  // ── Scroll to top button ───────────────────────────────────
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    updateProgress();
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  updateProgress();
+ 
+  // ── Skill bars animation ───────────────────────────────────
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(fill => {
+          const target = fill.getAttribute('data-width');
+          fill.style.width = '0%';
+          setTimeout(() => { fill.style.width = target; }, 150);
+        });
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  const skillBarsSection = document.getElementById('skill-bars-section');
+  if (skillBarsSection) barObs.observe(skillBarsSection);
+ 
+  // ── Hero canvas background animation ──────────────────────
+  const canvas = document.getElementById('hero-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const COLS = 20, ROWS = 10;
+    const vals = ['47.2','82','93%','↑12','3.4K','100','29','67%','↓5','14.8','56','88%','200','71','45.1','99%','↑8','32','R²','0.80','EDA','ML','BI'];
+    const cells = [];
+ 
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+ 
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        cells.push({
+          r, c,
+          val: vals[Math.floor(Math.random() * vals.length)],
+          opacity: Math.random() * 0.7 + 0.1,
+          speed: Math.random() * 0.004 + 0.002,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+ 
+    let t = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const cw = canvas.width / COLS;
+      const ch = canvas.height / ROWS;
+ 
+      // Grid lines
+      ctx.strokeStyle = 'rgba(224,83,110,0.12)';
+      ctx.lineWidth = 0.5;
+      for (let c = 0; c <= COLS; c++) {
+        ctx.beginPath(); ctx.moveTo(c * cw, 0); ctx.lineTo(c * cw, canvas.height); ctx.stroke();
+      }
+      for (let r = 0; r <= ROWS; r++) {
+        ctx.beginPath(); ctx.moveTo(0, r * ch); ctx.lineTo(canvas.width, r * ch); ctx.stroke();
+      }
+ 
+      // Floating data values
+      ctx.font = `${Math.min(cw * 0.36, 11)}px Inter, monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      cells.forEach(cell => {
+        const alpha = (Math.sin(t * cell.speed * 60 + cell.phase) + 1) / 2 * cell.opacity;
+        ctx.fillStyle = `rgba(224,83,110,${alpha})`;
+        ctx.fillText(cell.val, cell.c * cw + cw / 2, cell.r * ch + ch / 2);
+      });
+ 
+      t++;
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+</script>
+
+</body>
+</html>
