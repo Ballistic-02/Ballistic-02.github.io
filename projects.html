@@ -1464,6 +1464,134 @@
         </a>
       </div>
     </div>
+
+ <!-- Project 10: Fintech User Churn Prediction -->
+    <div class="project-row">
+      <div class="project-preview">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="180" fill="#0e1219"/>
+          <rect x="0" y="0" width="240" height="20" fill="#0a1628"/>
+          <text x="120" y="14" text-anchor="middle" fill="#e0536e" font-size="6.5" font-weight="700" font-family="Inter,sans-serif">USER CHURN PREDICTION &#183; Python + Power BI</text>
+ 
+          <!-- KPI row -->
+          <rect x="6" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#10b98130" stroke-width="1"/>
+          <text x="31" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700" font-family="Inter,sans-serif">0.9990</text>
+          <text x="31" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">ROC-AUC</text>
+ 
+          <rect x="60" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#e0536e20" stroke-width="1"/>
+          <text x="85" y="38" text-anchor="middle" fill="#e0536e" font-size="10" font-weight="700" font-family="Inter,sans-serif">1.00</text>
+          <text x="85" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Recall</text>
+ 
+          <rect x="114" y="26" width="50" height="28" fill="#1e2333" rx="3" stroke="#f59e0b30" stroke-width="1"/>
+          <text x="139" y="38" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700" font-family="Inter,sans-serif">6,000</text>
+          <text x="139" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Users Tracked</text>
+ 
+          <rect x="168" y="26" width="66" height="28" fill="#1e2333" rx="3" stroke="#ef444430" stroke-width="1"/>
+          <text x="201" y="38" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700" font-family="Inter,sans-serif">~54%</text>
+          <text x="201" y="48" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Churn Rate</text>
+ 
+          <!-- Scatter: failed txn rate vs churn risk -->
+          <text x="6" y="65" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Failed Transaction Rate vs. Churn Risk Score</text>
+          <line x1="6" y1="118" x2="146" y2="118" stroke="#26242b" stroke-width="1"/>
+          <line x1="6" y1="70" x2="6" y2="118" stroke="#26242b" stroke-width="1"/>
+          <circle cx="16" cy="112" r="1.8" fill="#10b981"/>
+          <circle cx="26" cy="110" r="1.8" fill="#10b981"/>
+          <circle cx="34" cy="113" r="1.8" fill="#10b981"/>
+          <circle cx="44" cy="108" r="1.8" fill="#10b981"/>
+          <circle cx="52" cy="105" r="1.8" fill="#f59e0b"/>
+          <circle cx="60" cy="100" r="1.8" fill="#f59e0b"/>
+          <circle cx="68" cy="90" r="1.8" fill="#f59e0b"/>
+          <circle cx="76" cy="78" r="1.8" fill="#ef4444"/>
+          <circle cx="86" cy="68" r="1.8" fill="#ef4444"/>
+          <circle cx="96" cy="62" r="1.8" fill="#ef4444"/>
+          <circle cx="108" cy="58" r="1.8" fill="#ef4444"/>
+          <circle cx="122" cy="55" r="1.8" fill="#ef4444"/>
+          <circle cx="136" cy="53" r="1.8" fill="#ef4444"/>
+          <text x="6" y="128" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Low</text>
+          <text x="130" y="128" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">High failure rate</text>
+ 
+          <!-- Risk band distribution -->
+          <text x="162" y="65" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">Risk Band Distribution</text>
+          <rect x="162" y="70" width="72" height="10" fill="#ef444420" rx="1"/>
+          <rect x="162" y="70" width="30" height="10" fill="#ef4444" rx="1"/>
+          <text x="196" y="79" fill="#ef4444" font-size="5" font-family="Inter,sans-serif">Critical</text>
+          <rect x="162" y="83" width="72" height="10" fill="#f59e0b20" rx="1"/>
+          <rect x="162" y="83" width="24" height="10" fill="#f59e0b" rx="1"/>
+          <text x="190" y="92" fill="#f59e0b" font-size="5" font-family="Inter,sans-serif">Watch</text>
+          <rect x="162" y="96" width="72" height="10" fill="#10b98120" rx="1"/>
+          <rect x="162" y="96" width="46" height="10" fill="#10b981" rx="1"/>
+          <text x="212" y="105" fill="#10b981" font-size="5" font-family="Inter,sans-serif">Healthy</text>
+ 
+          <!-- 4 dashboard pages -->
+          <text x="6" y="148" fill="#3d4d63" font-size="6" font-family="Inter,sans-serif">4 Dashboard Pages:</text>
+          <rect x="6" y="153" width="50" height="12" fill="#e0536e20" stroke="#e0536e40" stroke-width="1" rx="2"/>
+          <text x="31" y="162" text-anchor="middle" fill="#e0536e" font-size="4.5" font-family="Inter,sans-serif">Overview</text>
+          <rect x="60" y="153" width="52" height="12" fill="#1e2333" rx="2"/>
+          <text x="86" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Risk Ranking</text>
+          <rect x="116" y="153" width="58" height="12" fill="#1e2333" rx="2"/>
+          <text x="145" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Behavioral Drivers</text>
+          <rect x="178" y="153" width="56" height="12" fill="#1e2333" rx="2"/>
+          <text x="206" y="162" text-anchor="middle" fill="#3d4d63" font-size="4.5" font-family="Inter,sans-serif">Retention Impact</text>
+        </svg>
+      </div>
+      <div class="project-main">
+        <div class="project-header">
+          <span class="project-num">10</span>
+          <span class="project-badge">ML + Business Intelligence</span>
+        </div>
+        <h3 class="project-title">Fintech User Churn Prediction &amp; Retention Analytics</h3>
+        <p class="project-desc">
+          An end-to-end churn prediction system for a simulated digital payments / agent-banking
+          platform, modeled on the transaction patterns of Nigerian fintechs like
+          <strong style="color:var(--text);">Moniepoint</strong>. Applied RFM (Recency, Frequency,
+          Monetary) and behavioral trend analysis to flag at-risk users
+          <strong style="color:var(--text);">30 days before they churn</strong>, backed by a
+          4-page Power BI dashboard for fleet-level and user-level decision-making. Built on a
+          fully synthetic dataset with no affiliation to Moniepoint, modeled on the industry it
+          operates in.
+        </p>
+        <p class="project-desc">
+          46,676 monthly user-behavior records across 6,000 users over an 18-month window, spanning
+          3 KYC tiers, 2 channels (App and USSD), and 3 engagement segments, with a ~54% eventual
+          churn rate. Users decline through a realistic
+          <strong style="color:var(--text);">2&ndash;4 month behavioral ramp</strong> rather than a
+          random flag: transaction frequency and value drop, failed-transaction rate climbs, and
+          wallet balance drifts toward zero. A
+          <strong style="color:var(--text);">Random Forest Classifier</strong> with a time-aware
+          train/test split (no data leakage) achieves
+          <strong style="color:var(--text);">ROC-AUC 0.9990</strong>,
+          <strong style="color:var(--text);">100% recall</strong>, and
+          <strong style="color:var(--text);">89% precision</strong> on the churn class, catching
+          all 1,739 pre-churn cases in the test set.
+        </p>
+        <p class="project-desc">
+          The top predictive signal was failed transaction rate and its 3-month trend, ahead of
+          simple activity decline, a business insight suggesting retention efforts should prioritize
+          fixing transaction failures over generic re-engagement campaigns. The Power BI dashboard
+          covers Overview (KPIs, churn trend, risk distribution), Churn Risk Ranking (user-level risk
+          matrix by KYC tier and engagement), Behavioral Drivers (diagnostic breakdown of why users
+          churn), and Retention Impact (transaction value at risk vs. proactive retention cost).
+        </p>
+        <div class="project-tags">
+          <span class="p-tag">Python</span>
+          <span class="p-tag">Scikit-learn</span>
+          <span class="p-tag">Random Forest</span>
+          <span class="p-tag">Power BI</span>
+          <span class="p-tag">DAX</span>
+          <span class="p-tag">RFM Analysis</span>
+          <span class="p-tag">Fintech</span>
+          <span class="p-tag">Feature Engineering</span>
+          <span class="p-tag">Retention Analytics</span>
+        </div>
+      </div>
+      <div class="project-side">
+        <span class="project-badge">Flagship Project</span>
+        <a class="btn-link" href="https://github.com/Ballistic-02/Churn-Prediction-Analysis" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
  
   </div>
 </section>
